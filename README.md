@@ -1,4 +1,4 @@
-# Nvim-Config-File
+# Lazy-Nvim-Config-File
 
 This is a **ready to go** nvim configuration that you can clone in your '.config/ ' folder to use.
 
@@ -21,7 +21,7 @@ Best for C/CPP.
 > --comment
 
 
-
+</br>
 
 #### May be usefull...
 
