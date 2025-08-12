@@ -15,17 +15,17 @@ cd ~/.config && git clone https://github.com/lielibert/nvim.git
 
 > ### It contain packages like
 
-> --telescope
-> --plenary
-> --treesitter
-> --nvim-surround
-> --nvim-cmp
-> --meason
-> --nvim-dap
-> --nvim-tree
-> --tokyonight
-> --lualine
-> --comment
+>> --telescope
+>> --plenary
+>> --treesitter
+>> --nvim-surround
+>> --nvim-cmp
+>> --meason
+>> --nvim-dap
+>> --nvim-tree
+>> --tokyonight
+>> --lualine
+>> --comment
 
 
 </br>
