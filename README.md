@@ -1,8 +1,19 @@
-# Lazy-Nvim-Config-File
+# Introduction
 
-This is a **ready to go** nvim configuration that you can clone in your '.config/ ' folder to use.
+This is a **ready to go** nvim lua  configuration using **nvim plugin manager**  that you can clone in your **.config/** folder to use. Best for C/CPP.
 
-Best for C/CPP.
+This is somewhat lightweith also 😅.
+
+
+
+## Install and setup
+'''
+cd ~/.config
+'''
+
+'''
+git clone https://github.com/lielibert/nvim.git
+'''
 
 
 
@@ -22,10 +33,9 @@ Best for C/CPP.
 
 
 </br>
+</br>
 
 #### May be usefull...
 
+--this works best in arch-linux
 
--- also this works best in arch-linux
-
---btw I use arch 
