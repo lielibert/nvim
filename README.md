@@ -1,8 +1,10 @@
 # Nvim-Config-File
 
-This is a ready to go nvim configuration that you can clone in your '.config/ ' folder.
+This is a **ready to go** nvim configuration that you can clone in your '.config/ ' folder to use.
 
-Best for C/CPP
+Best for C/CPP.
+
+
 
 > ### It contain packages like
 
@@ -21,6 +23,9 @@ Best for C/CPP
 
 
 
-#### ->
+#### May be usefull...
+
+
 -- also this works best in arch-linux
+
 --btw I use arch 
