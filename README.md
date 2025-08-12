@@ -7,13 +7,13 @@ This is somewhat lightweith also 😅.
 
 
 ## Install and setup
-'''
+```
 cd ~/.config
-'''
+```
 
-'''
+```
 git clone https://github.com/lielibert/nvim.git
-'''
+```
 
 
 
