@@ -4,7 +4,8 @@ This is a ready to go nvim configuration that you can clone in your '.config/ ' 
 
 Best for C/CPP
 
-> ### It contain packages like 
+> ### It contain packages like
+
 > --telescope
 > --plenary
 > --treesitter
@@ -21,5 +22,5 @@ Best for C/CPP
 
 
 #### ->
-> -- also this works best in arch-linux
-> --btw I use arch 
+-- also this works best in arch-linux
+--btw I use arch 
