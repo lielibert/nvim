@@ -2,7 +2,7 @@
 
 This is a **ready to go** nvim lua  configuration using **nvim plugin manager**  that you can clone in your **.config/** folder to use. Best for C/CPP.
 
-This is somewhat lightweith also 😅.
+This is some-what lightweight ... also 😅.
 
 
 
