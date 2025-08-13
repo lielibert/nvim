@@ -7,17 +7,22 @@ local path = vim.fn.stdpath("config") .. "/lua/plugin/"
 
 return {
 	-- config file are in the plugin folder.
+	dofile(path .. "snacks.lua"),
 	dofile(path .. "mason.lua"),
 	dofile(path .. "nvim-tree.lua"),
-	dofile(path .. "which-key.lua"),
 	dofile(path .. "telescope.lua"),
 	dofile(path .. "tabout.lua"),
+	dofile(path .. "which-key.lua"),
 	dofile(path .. "nvim-lualine.lua"),
 	dofile(path .. "nvim-treesitter.lua"),
 	dofile(path .. "nvim-surround.lua"),
 	dofile(path .. "nvim-cmp.lua"),
 	
 	-- small plugins
+	{
+		"echasnovski/mini.icons",
+		branch= "main"
+	},
 
 	{
 		"mg979/vim-visual-multi",
@@ -25,13 +30,7 @@ return {
 	},
 
 	{
-		"matze/vim-move",
-		config = function()
-			vim.g.move_key_modifier = 'A' -- Alt
-		end
-	},
 
-	{
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
 		---@module "ibl"
