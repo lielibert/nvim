@@ -13,15 +13,15 @@ cd ~/.config && git clone https://github.com/lielibert/nvim.git
 
 ### It contain plugins like
 
-> -telescope </br>
-> -treesitter </br>
-> -nvim-surround </br>
-> -nvim-cmp </br>
-> -meason </br>
-> -nvim-tree </br>
-> -tokyonight </br>
-> -lualine </br>
-> -comment </br>
+> - telescope </br>
+> - treesitter </br>
+> - nvim-surround </br>
+> - nvim-cmp </br>
+> - meason </br>
+> - nvim-tree </br>
+> - tokyonight </br>
+> - lualine </br>
+> - comment </br>
 
 
 </br>
