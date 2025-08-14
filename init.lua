@@ -8,10 +8,10 @@ dofile("/home/last/.config/nvim/lua/lazy.lua")
 require("lazy").setup(require("plugins"))
 
 -- loarding custom keys
-require("keymap")
 
 -- setting the nvim 
 vim.opt.relativenumber = true
 vim.cmd.colorscheme("tokyonight-moon")
 
+require("keymap")
 
