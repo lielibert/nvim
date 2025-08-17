@@ -16,3 +16,7 @@ vim.keymap.set("v", "<leader>j", ":m '>+1<CR>gv=gv", { noremap = true, silent = 
 
 
 
+vim.api.nvim_set_keymap("n", "<leader>cc",
+    ":!cmake -S . -B build -G Ninja -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ",
+    { noremap = true, silent = true })
+
