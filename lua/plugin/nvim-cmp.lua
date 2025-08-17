@@ -5,13 +5,16 @@ return 	{
 		"hrsh7th/cmp-buffer",   -- Buffer completions
 		"hrsh7th/cmp-path",     -- Path completions
 		"L3MON4D3/LuaSnip",     -- Snippet engine
-		 "saadparwaiz1/cmp_luasnip",
+		"saadparwaiz1/cmp_luasnip",
 		"rafamadriz/friendly-snippets" ,
 	},
+	lazy = true,  -- don't load on startup
+        event = "InsertEnter",  -- load when you enter insert mode
+
 	config = function()
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
-		require("luasnip.loaders.from_vscode").lazy_load()
+		require("luasnip.loaders.from_vscode")
 		cmp.setup({
 			snippet = {
 				expand = function(args)
@@ -45,9 +48,9 @@ return 	{
 				["<CR>"] = cmp.mapping.confirm({ select = true }), -- Enter to confirm
 			}),
 			sources = cmp.config.sources({
-				{ name = "nvim_lsp",max_item_count=5 },
+				{ name = "nvim_lsp",max_item_count=10 },
 				{ name = "luasnip"},
-				{ name = "buffer", max_item_count= 5 },
+				{ name = "buffer", max_item_count= 8 },
 				{ name = "path" },
 			})
 		})
