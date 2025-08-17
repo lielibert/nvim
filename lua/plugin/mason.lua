@@ -14,7 +14,13 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
+
 			local lspconfig = require("lspconfig")
+			lspconfig.pyright.setup{
+				on_attach = function(client, bufnr)
+					print("LSP attached for Python")
+				end,
+			}
 
 			lspconfig.clangd.setup({
 				cmd = {"clangd",
@@ -31,9 +37,9 @@ return {
 				end,
 				capabilities = require("cmp_nvim_lsp").default_capabilities()
 			})
-			end,
+		end,
 
-		},
+	},
 
 		{
 			"mfussenegger/nvim-dap",
@@ -73,10 +79,10 @@ return {
 						name = "Launch",
 						type = "gdb",
 						request = "launch",
-						-- program = function()
-							-- 	return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-							-- end,
-							program = "/home/last/a.out", 
+						program = function()
+								return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+							end,
+							-- program = "/home/last/a.out", 
 							cwd = "${workspaceFolder}",
 							stopAtBeginningOfMainSubprogram = false,
 						},
@@ -108,10 +114,10 @@ return {
 					dap.configurations.rust = dap.configurations.c
 
 					-- Keymaps for nvim-dap
-					vim.keymap.set("n", "<F5>", dap.continue, { desc = "DAP Continue/Start" })
-					vim.keymap.set("n", "<F10>", dap.step_over, { desc = "DAP Step Over" })
-					vim.keymap.set("n", "<F11>", dap.step_into, { desc = "DAP Step Into" })
-					vim.keymap.set("n", "<F12>", dap.step_out, { desc = "DAP Step Out" })
+					vim.keymap.set("n", "<learder>ds", dap.continue, { desc = "DAP Continue/Start" })
+					vim.keymap.set("n", "<learder>so", dap.step_over, { desc = "DAP Step Over" })
+					vim.keymap.set("n", "<leader>si", dap.step_into, { desc = "DAP Step Into" })
+					vim.keymap.set("n", "<leader>so", dap.step_out, { desc = "DAP Step Out" })
 
 					vim.keymap.set("n", "<leader>db", dap.toggle_breakpoint, { desc = "DAP Toggle Breakpoint" })
 					vim.keymap.set("n", "<leader>dB", function()
@@ -130,12 +136,6 @@ return {
 
 			},
 
-			{
-				"lewis6991/gitsigns.nvim",
-				config = function()
-					require("gitsigns").setup()
-				end
-			},
 
 
 		}
