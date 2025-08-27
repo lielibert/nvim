@@ -114,7 +114,7 @@ return {
 					dap.configurations.rust = dap.configurations.c
 
 					-- Keymaps for nvim-dap
-					vim.keymap.set("n", "<learder>ds", dap.continue, { desc = "DAP Continue/Start" })
+					vim.keymap.set("n", "<F5>", dap.continue, { desc = "DAP Continue/Start" })
 					vim.keymap.set("n", "<learder>so", dap.step_over, { desc = "DAP Step Over" })
 					vim.keymap.set("n", "<leader>si", dap.step_into, { desc = "DAP Step Into" })
 					vim.keymap.set("n", "<leader>so", dap.step_out, { desc = "DAP Step Out" })
