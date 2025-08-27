@@ -8,7 +8,6 @@ return 	{
 		"saadparwaiz1/cmp_luasnip",
 		"rafamadriz/friendly-snippets" ,
 	},
-	lazy = true,  -- don't load on startup
         event = "InsertEnter",  -- load when you enter insert mode
 
 	config = function()
@@ -48,9 +47,9 @@ return 	{
 				["<CR>"] = cmp.mapping.confirm({ select = true }), -- Enter to confirm
 			}),
 			sources = cmp.config.sources({
-				{ name = "nvim_lsp",max_item_count=10 },
+				{ name = "nvim_lsp",max_item_count=15 },
 				{ name = "luasnip"},
-				{ name = "buffer", max_item_count= 8 },
+				{ name = "buffer", max_item_count= 15 },
 				{ name = "path" },
 			})
 		})
