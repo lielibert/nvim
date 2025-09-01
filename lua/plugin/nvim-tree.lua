@@ -1,6 +1,6 @@
 return {
 	"nvim-tree/nvim-tree.lua",
-	version = "*",
+	event = "VimEnter",
 	lazy = false,
 	dependencies = {
 		"nvim-tree/nvim-web-devicons",
@@ -20,7 +20,7 @@ return {
 				dotfiles = true,
 			},
 		}
-		vim.keymap.set("n","<leader>e", ":NvimTreeToggle<CR>",{noremap = true, silent = true})
+		-- vim.keymap.set("n","<leader>e", ":NvimTreeToggle<CR>",{noremap = true, silent = true})
 
 	end,
 }

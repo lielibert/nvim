@@ -8,19 +8,17 @@ local path = vim.fn.stdpath("config") .. "/lua/plugin/"
 return {
 	-- config file are in the plugin folder.
 	dofile(path .. "snacks.lua"),
-	dofile(path .. "toggleterm.lua"),
 	dofile(path .. "barbar.lua"),
 	dofile(path .. "lazydev.lua"),
 	dofile(path .. "mason.lua"),
-	dofile(path .. "nvim-tree.lua"),
-	dofile(path .. "telescope.lua"),
 	dofile(path .. "tabout.lua"),
 	dofile(path .. "which-key.lua"),
 	dofile(path .. "nvim-lualine.lua"),
 	dofile(path .. "nvim-treesitter.lua"),
 	dofile(path .. "nvim-surround.lua"),
 	dofile(path .. "nvim-cmp.lua"),
-	dofile(path .. "git.lua"),
+	-- dofile(path .. "telescope.lua"),
+	-- dofile(path .. "git.lua"),
 	
 	-- small plugins
 	{

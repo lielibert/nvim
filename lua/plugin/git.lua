@@ -1,12 +1,4 @@
 return {
-  -- Fugitive
-  {
-	  "tpope/vim-fugitive",
-	  lazy = true,  -- don't load on startup
-	  event = "InsertEnter",  -- load when you enter insert mode
-
-	  cmd = { "G", "Git", "Gdiffsplit", "Gvdiffsplit", "Gblame", "Glog" }
-  },
 
   -- Gitsigns
   {
