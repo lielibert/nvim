@@ -2,13 +2,16 @@ return
 
 	{
 		'romgrk/barbar.nvim',
-		lazy = false,
+		event = "BufWinEnter", -- loads as soon as a buffer window is shown
 		dependencies = {
 			'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
-			'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+			{
+				'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+				lazy = "BufWinEnter"
+			},
 			{
 				'moll/vim-bbye',  -- fast buffer deletion
-				lazy = true
+				event="VimEnter"
 			}
 		},
 		config = function()

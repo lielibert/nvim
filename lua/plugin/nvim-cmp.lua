@@ -8,7 +8,7 @@ return 	{
 		"saadparwaiz1/cmp_luasnip",
 		"rafamadriz/friendly-snippets" ,
 	},
-        event = "VimEnter",  -- load when the file is loaded
+        event = "InsertEnter",  -- load when the file is loaded
 
 	config = function()
 		local cmp = require("cmp")

@@ -2,6 +2,7 @@ return
 	{
 		{
 			"nvim-treesitter/nvim-treesitter",
+			event = "VimInsert",
 			build = ":TSUpdate",        -- update parsers after install
 			config = function()
 				require("nvim-treesitter.configs").setup {
@@ -18,6 +19,7 @@ return
 		},
 		{
 			"nvim-treesitter/nvim-treesitter-textobjects",
+			event = "VeryLazy",
 			dependencies = { "nvim-treesitter/nvim-treesitter" },
 			config = function()
 				require("nvim-treesitter.configs").setup {

@@ -3,6 +3,7 @@ return {
 	{
 
 		"williamboman/mason.nvim",
+		event = "VeryLazy",
 		build = ":MasonUpdate",
 		config = function()
 			require("mason").setup()
@@ -13,7 +14,7 @@ return {
 
 	{
 		"neovim/nvim-lspconfig",
-		lazy = false,
+		event = "VeryLazy",
 		config = function()
 
 			local lspconfig = require("lspconfig")
@@ -49,7 +50,7 @@ return {
 
 	{
 		"mfussenegger/nvim-dap",
-		lazy = true,
+		event = "VeryLazy",
 		dependencies = {
 
 			"rcarriga/nvim-dap-ui", -- Optional UI
