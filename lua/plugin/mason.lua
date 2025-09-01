@@ -17,18 +17,22 @@ return {
 		config = function()
 
 			local lspconfig = require("lspconfig")
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			lspconfig.pyright.setup{
+				capabilities = capabilities,
 				on_attach = function(client, bufnr)
 					print("LSP attached for Python")
 				end,
 			}
 
 			lspconfig.clangd.setup({
+				capabilities = capabilities,
+
 				cmd = {"clangd",
-				"--background-index",
-				"--clang-tidy",
-				"--header-insertion=never",
-				"--compile-commands-dir=build"}, -- path to clangd binary
+					"--background-index",
+					"--clang-tidy",
+					"--header-insertion=never",
+					"--compile-commands-dir=build"}, -- path to clangd binary
 				filetypes = { "c", "cpp", "objc", "objcpp" },
 				root_dir = lspconfig.util.root_pattern("CMakeLists.txt",".git", "compile_flags.txt","compile_commands.json" ),
 			})
@@ -45,6 +49,7 @@ return {
 
 	{
 		"mfussenegger/nvim-dap",
+		lazy = true,
 		dependencies = {
 
 			"rcarriga/nvim-dap-ui", -- Optional UI
