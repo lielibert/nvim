@@ -5,7 +5,7 @@ vim.g.mapleader = " "
 dofile("/home/last/.config/nvim/lua/lazy.lua")
 
 -- Setup plugins
-require("lazy").setup(require("plugins"))
+require("lazy").setup(require("config"))
 
 -- loarding custom keys
 
