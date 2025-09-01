@@ -1,8 +1,7 @@
 local path = vim.fn.stdpath("config") .. "/lua/plugin/"
 
 -- uncomment the below line to use new config path.
-
---  local path = " {{ can provide a new config path }}"
+	--  local path = " {{ can provide a new config path }}"
 
 
 return {
@@ -18,7 +17,6 @@ return {
 	dofile(path .. "nvim-surround.lua"),
 	dofile(path .. "nvim-cmp.lua"),
 	-- dofile(path .. "telescope.lua"),
-	-- dofile(path .. "git.lua"),
 	
 	-- small plugins
 	{
@@ -37,7 +35,19 @@ return {
 		main = "ibl",
 		---@module "ibl"
 		---@type ibl.config
-		opts = {},
+		opts = {
+		},
+		config = function()
+			require("ibl").setup(
+				{
+					indent = {
+						char = "┆",
+						
+					},
+					whitespace = { highlight = { "Whitespace", "NonText" } },
+				}
+			)
+		end
 	},
 
 	{
@@ -53,6 +63,9 @@ return {
 		lazy = false,
 		priority = 1000,
 		opts = {},
+		config = function()
+			vim.cmd[[colorscheme tokyonight-storm]]
+		end
 	},
 
 	{

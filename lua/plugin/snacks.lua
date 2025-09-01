@@ -5,11 +5,10 @@ return {
   -- -@type snacks.Config
 	opts = {
 
-		animate = {enabled = false},
+		animate = {enabled = true},
 		bufdelete = {enabled = false},
 		debug = { enabled = false},
 		image = { enabled = false},
-		statuscolumn = { enabled = false },
 		zen = { enabled = false },
 		lazygit = { enabled = true },
 		bigfile = { enabled = true },
@@ -24,7 +23,7 @@ return {
 		scope = { enabled = true },
 		scroll = { enabled = true },
 		statuscolumn = { enabled = true },
-		words = { enabled = true },
+		words = { enabled = true, treesitter=true },
 		git = {enabled = true },
 		gitbrowse = {enabled = true},
 		rename = { enabled = true },

@@ -8,12 +8,12 @@ return 	{
 		"saadparwaiz1/cmp_luasnip",
 		"rafamadriz/friendly-snippets" ,
 	},
-        event = "VimEnter",  -- load when you enter insert mode
+        event = "VimEnter",  -- load when the file is loaded
 
 	config = function()
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
-		require("luasnip.loaders.from_vscode")
+		require("luasnip.loaders.from_vscode").lazy_load()
 		cmp.setup({
 			snippet = {
 				expand = function(args)
@@ -21,7 +21,7 @@ return 	{
 				end,
 			},
 			mapping = cmp.mapping.preset.insert({
-				["<Tab>"] = cmp.mapping(function(fallback)
+				["<C-n>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
 						cmp.select_next_item()
 					elseif luasnip.expand_or_jumpable() then
@@ -30,7 +30,7 @@ return 	{
 						fallback()
 					end
 				end, { "i", "s" }),
-				["<S-Tab>"] = cmp.mapping(function(fallback)
+				["<C-p>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
 						cmp.select_prev_item()
 					elseif luasnip.jumpable(-1) then
@@ -50,7 +50,7 @@ return 	{
 				{ name = "nvim_lsp",max_item_count=15 },
 				{ name = "luasnip"},
 				{ name = "buffer", max_item_count= 15 },
-				{ name = "path" },
+				{ name = "path" ,max_item_count=5},
 			})
 		})
 	end,
