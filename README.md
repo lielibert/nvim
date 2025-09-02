@@ -13,22 +13,22 @@ cd ~/.config && git clone https://github.com/lielibert/nvim.git
 
 ### It contain plugins like
 
-> - telescope </br>
+> - snacks </br>
 > - treesitter </br>
 > - nvim-surround </br>
 > - nvim-cmp </br>
-> - meason </br>
-> - nvim-tree </br>
+> - barbar </br>
 > - tokyonight </br>
 > - lualine </br>
-> - comment </br>
 
 
 </br>
 </br>
 
 #### May be usefull...
-
---this works best in arch-linux
+-- install a clipboard like xclip for x11 or wl-clipboard for wayland
+-- can also install OSC52 for copying from remote Nvim session.
+<br>
+-- this works best in arch-linux
 
 

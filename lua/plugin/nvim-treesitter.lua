@@ -2,7 +2,7 @@ return
 	{
 		{
 			"nvim-treesitter/nvim-treesitter",
-			event = "VimInsert",
+			event = "VimEnter",
 			build = ":TSUpdate",        -- update parsers after install
 			config = function()
 				require("nvim-treesitter.configs").setup {

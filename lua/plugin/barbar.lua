@@ -11,14 +11,14 @@ return
 			},
 			{
 				'moll/vim-bbye',  -- fast buffer deletion
-				event="VimEnter"
+				event="BufWinEnter"
 			}
 		},
 		config = function()
 			-- Setup barbar (optional settings)
 			require("barbar").setup({
 				-- Enable/disable animations
-				animation = true,
+				animation = false,
 				-- Show buffer icons
 				icons = { buffer_index = true, filetype = { enabled = true } },
 			})

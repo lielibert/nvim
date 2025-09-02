@@ -1,7 +1,7 @@
 -- keymap config 
 
 vim.keymap.set("i", "jj", "<Esc>")
-
+vim.opt.clipboard = "unnamedplus"
 vim.opt.relativenumber = true
 -- for moving line 
 vim.keymap.set("n", "<leader>j" , ":m .+1<CR>==", { noremap = true, silent = true })

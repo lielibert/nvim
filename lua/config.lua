@@ -22,11 +22,17 @@ return
 		dofile(path .. "snacks.lua"),
 		dofile(path .. "nvim-treesitter.lua"),
 		dofile(path .. "nvim-lualine.lua"),
+		dofile(path .. "better-escape.lua"),
+		dofile(path .. "hop.lua"),
 		dofile(path .. "nvim-cmp.lua"),
 		dofile(path .. "nvim-surround.lua"),
 		dofile(path .. "which-key.lua"),
 		dofile(path .. "tabout.lua"),
+		dofile(path .. "conform.lua"),
+		dofile(path .. "ale.lua"),
 
+
+		-- dofile(path .. "osc52.lua"),
 		-- dofile(path .. "lazydev.lua"), --load when creating your own plugins and uncomment the lazydev file.
 		-- dofile(path .. "telescope.lua"),
 
