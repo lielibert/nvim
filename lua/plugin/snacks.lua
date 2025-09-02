@@ -1,7 +1,7 @@
 return {
   "folke/snacks.nvim",
   priority = 1000,
-  event = "VimEnter",
+event = "VimEnter",
   -- -@type snacks.Config
 	opts = {
 

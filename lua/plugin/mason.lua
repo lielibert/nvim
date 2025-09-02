@@ -78,7 +78,7 @@ return {
 
 			dap.adapters.gdb = {
 				type = "executable",
-				command = "gdb",
+				command = "/bin/gdb",
 				args = { "--interpreter=dap", "--eval-command", "set print pretty on" }
 			}
 
@@ -87,12 +87,13 @@ return {
 					name = "Launch",
 					type = "gdb",
 					request = "launch",
+					
 					program = function()
 						return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
 					end,
-					-- program = "/home/last/a.out", 
 					cwd = "${workspaceFolder}",
-					stopAtBeginningOfMainSubprogram = false,
+					stopOnEntry = false,
+					args = {},
 				},
 				{
 					name = "Select and attach to process",
@@ -138,7 +139,7 @@ return {
 			vim.keymap.set("n", "<leader>dr", dap.repl.open, { desc = "DAP Open REPL" })
 			vim.keymap.set("n", "<leader>dq", dap.terminate, { desc = "DAP Terminate" })
 			vim.keymap.set("n", "<leader>dp", dap.pause, { desc = "DAP Pause" })
-		
+
 		end,
 
 	},
