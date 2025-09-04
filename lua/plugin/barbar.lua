@@ -9,16 +9,12 @@ return
 				'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
 				lazy = "BufWinEnter"
 			},
-			{
-				'moll/vim-bbye',  -- fast buffer deletion
-				event="BufWinEnter"
-			}
 		},
 		config = function()
 			-- Setup barbar (optional settings)
 			require("barbar").setup({
 				-- Enable/disable animations
-				animation = false,
+				animation = true,
 				-- Show buffer icons
 				icons = { buffer_index = true, filetype = { enabled = true } },
 			})
@@ -35,10 +31,10 @@ return
 			vim.keymap.set('n', '<A->>', ':BufferMoveNext<CR>', opts)
 
 			-- Close buffers using Bdelete (fast)
-			vim.keymap.set('n', '<leader>c', ':Bdelete<CR>', opts)               -- close current
-			vim.keymap.set('n', '<leader>co', ':BufferCloseAllButCurrent<CR>', opts) -- close others
-			vim.keymap.set('n', '<leader>cl', ':BufferCloseLeft<CR>', opts)         -- close left
-			vim.keymap.set('n', '<leader>cr', ':BufferCloseRight<CR>', opts)        -- close right
+			vim.keymap.set('n', '<leader>bc', ':Bd<CR>', opts)               -- close current
+			vim.keymap.set('n', '<leader>bo', ':BufferCloseAllButCurrent<CR>', opts) -- close others
+			vim.keymap.set('n', '<leader>bl', ':BufferCloseLeft<CR>', opts)         -- close left
+			vim.keymap.set('n', '<leader>br', ':BufferCloseRight<CR>', opts)        -- close right
 
 			for i = 1, 9 do
 				vim.keymap.set('n', '<leader>' .. i, ':BufferGoto ' .. i .. '<CR>', opts)
