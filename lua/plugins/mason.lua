@@ -19,6 +19,34 @@ return {
 
 			local lspconfig = require("lspconfig")
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+			-- HTML
+			lspconfig.html.setup{capabilities = capabilities,}
+
+			-- CSS
+			lspconfig.cssls.setup{capabilities = capabilities,}
+
+			-- JavaScript / TypeScript
+			lspconfig.volar.setup{
+				capabilities = capabilities,
+				filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" }
+			}
+			lspconfig.texlab.setup {
+				capabilities = capabilities,
+				settings = {
+					texlab = {
+						build = {
+							executable = "latexmk",
+							args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" },
+							onSave = true,
+						},
+						forwardSearch = {
+							executable = "zathura",
+							args = { "--synctex-forward", "%l:1:%f", "%p" },
+						},
+					},
+				},
+			}
+
 			lspconfig.pyright.setup{
 				capabilities = capabilities,
 				on_attach = function(client, bufnr)
@@ -87,7 +115,7 @@ return {
 					name = "Launch",
 					type = "gdb",
 					request = "launch",
-					
+
 					program = function()
 						return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
 					end,
