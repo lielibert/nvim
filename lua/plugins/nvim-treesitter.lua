@@ -2,13 +2,13 @@ return
 	{
 		{
 			"nvim-treesitter/nvim-treesitter",
-			event = "VimEnter",
+			event = "VeryLazy",
 			build = ":TSUpdate",        -- update parsers after install
 			config = function()
 				require("nvim-treesitter.configs").setup {
 
 					-- Only install parsers for specific languages
-					ensure_installed = { "c", "cpp", "python", "lua", "javascript" },
+					ensure_installed = {"c", "cpp", "python", "lua", "javascript" },
 
 					-- Automatically install missing parsers when entering buffer
 					auto_install = true,

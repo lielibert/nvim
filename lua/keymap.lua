@@ -9,3 +9,4 @@ vim.keymap.set("n", "<leader>k" , ":m .-2<CR>==", { noremap = true, silent = tru
 vim.keymap.set("v", "<leader>k", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 vim.keymap.set("v", "<leader>j", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
 
+vim.keymap.set("i","<C-CR>","<C-o>o",{noremap= true, silent = true})

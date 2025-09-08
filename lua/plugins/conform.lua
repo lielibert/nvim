@@ -22,7 +22,7 @@ return {
 					yaml = { "prettier" },
 				},
 			})
-			vim.keymap.set("n", "<leader>f", function()
+			vim.keymap.set("n", "<leader>fm", function()
 				require("conform").format({ async = true })
 			end, { noremap = true, silent = true })
 		end,
