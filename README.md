@@ -33,7 +33,7 @@ cd ~/.config && git clone https://github.com/lielibert/nvim.git
 ├── init.lua</br>
 ├── lazy-lock.json</br>
 └── lua</br>
-\ \ \ \ ├── keymaps -> can put custom keybindings</br>
+\ ├── keymaps -> can put custom keybindings</br>
 &nbsp;&nbsp;&nbsp;&nbsp;└── plugins -> contain plugins ( identifiable by names ) and their setups & keybindings
 </p>
 
