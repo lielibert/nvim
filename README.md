@@ -24,22 +24,15 @@ cd ~/.config && git clone https://github.com/lielibert/nvim.git
 
 </br>
 
-> ## Project Structure -> 
+> ## Project Structure
 
->>.
-
->>├── LICENSE
-
->>├── README.md
-
->>├── init.lua
-
->>├── lazy-lock.json
-
->>└── lua
-
->>    ├── keymaps -> can put custom keybindings
-
+>>.</br>
+>>├── LICENSE</br>
+>>├── README.md</br>
+>>├── init.lua</br>
+>>├── lazy-lock.json</br>
+>>└── lua</br>
+>>    ├── keymaps -> can put custom keybindings</br>
 >>    └── plugins -> contain plugins ( you can identify them with their names ) and their setups & keybindings
 
 #### May be usefull...
