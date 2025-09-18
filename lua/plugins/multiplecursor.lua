@@ -9,10 +9,10 @@ return{
 			local set = vim.keymap.set
 
 			-- Add or skip cursor above/below the main cursor.
-			set({"n", "x"}, "<leader>mk", function() mc.lineAddCursor(-1) end)
-			set({"n", "x"}, "<leader>mj", function() mc.lineAddCursor(1) end)
-			set({"n", "x"}, "<leader>mK", function() mc.lineSkipCursor(-1) end)
-			set({"n", "x"}, "<leader>mj", function() mc.lineSkipCursor(1) end)
+			set({"n", "x"}, "<C-k>", function() mc.lineAddCursor(-1) end)
+			set({"n", "x"}, "<C-j>", function() mc.lineAddCursor(1) end)
+			set({"n", "x"}, "<C-S-k>", function() mc.lineSkipCursor(-1) end)
+			set({"n", "x"}, "<C-S-j>", function() mc.lineSkipCursor(1) end)
 
 			-- Add or skip adding a new cursor by matching word/selection
 			set({"n", "x"}, "<leader>mn", function() mc.matchAddCursor(1) end)
