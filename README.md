@@ -1,34 +1,54 @@
 # Introduction
 
-This is a **ready to go** nvim lua  configuration using **nvim plugin manager**  that you can clone in your **.config/** folder to use. Best for C/CPP. </br>
+This is a **ready to go** nvim lua  configuration using **Lazy Plugin Manager** that you can clone in your **.config/** folder to use. Best for C/CPP & rust & python.</br>
 This is some-what lightweight ... also 😅.
 
-
-
 ## Install and setup
+</br>
 ```
 cd ~/.config && git clone https://github.com/lielibert/nvim.git
 ```
 
+---
 
 ### It contain plugins like
 
-> - snacks </br>
-> - treesitter </br>
-> - nvim-surround </br>
-> - nvim-cmp </br>
-> - barbar </br>
-> - tokyonight </br>
-> - lualine </br>
+> - For Quality of Life -> snacks</br>
 
+> - For Theme -> tokyonight</br>
+
+> - For Error Detection -> mason , lspconfig , nvim-lint and more</br>
+
+> - For Debuging -> nvim-dap + UI</br>
+
+> - For Completion -> blink</br>
+
+> - Also contain features multi cursor & comment & tabout & rainbow brackets indent</br>
+
+> - Also contain Plugin for AI , can enable it in init.lua file</br>
+
+> - Use browser for AI chat , nothing is perfect</br>
 
 </br>
-</br>
+
+> ## Project Structure -> 
+
+.
+├── LICENSE
+├── README.md
+├── init.lua
+├── lazy-lock.json
+└── lua
+    ├── keymaps -> can put custom keybindings
+    └── plugins -> contain plugins ( you can identify them with their names ) and their setups & keybindings
 
 #### May be usefull...
--- install a clipboard like xclip for x11 or wl-clipboard for wayland
--- can also install OSC52 for copying from remote Nvim session.
-<br>
--- this works best in arch-linux
 
+</br>
+-- install a clipboard like xclip for x11 or wl-clipboard for wayland </br>
+-- can also kitty terminal or something that allow ssh copying
+</br>
+-- this works best in arch-linux
+</br>
+-- I will try to make its a guide for keybindings for now you can use which-key plugins.
 
