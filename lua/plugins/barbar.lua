@@ -1,4 +1,4 @@
-return 
+return
 {
 	"romgrk/barbar.nvim",
 	event = "BufWinEnter", -- loads as soon as a buffer window is shown
@@ -18,9 +18,6 @@ return
 			icons = { buffer_index = true, filetype = { enabled = true } },
 		})
 
-		local opts = { noremap = true, silent = true }
-		-- Config for barbar.lua
-
 		-- Navigate buffers  Not Committed Yet  Not Committed Yet
 		vim.keymap.set("n", "<TAB>", ":BufferNext<CR>", opts)
 		vim.keymap.set("n", "<S-TAB>", ":BufferPrevious<CR>", opts)
@@ -30,7 +27,7 @@ return
 		vim.keymap.set("n", "<A->>", ":BufferMoveNext<CR>", opts)
 
 		-- Close buffers using Bdelete (fast)
-		vim.keymap.set("n", "<leader>bc", ":Bd<CR>", opts) -- close current
+		vim.keymap.set("n", "<leader>bd", ":Bd<CR>", opts) -- close current
 		vim.keymap.set("n", "<leader>bo", ":BufferCloseAllButCurrent<CR>", opts) -- close others
 		vim.keymap.set("n", "<leader>bl", ":BufferCloseLeft<CR>", opts) -- close left
 		vim.keymap.set("n", "<leader>br", ":BufferCloseRight<CR>", opts) -- close right
