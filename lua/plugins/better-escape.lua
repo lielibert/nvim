@@ -4,7 +4,7 @@ return {
 		event = "InsertEnter", -- lazy load when entering insert mode
 		config = function()
 			require("better_escape").setup({
-				timeout = vim.o.timeoutlen, -- after `timeout` passes, you can press the escape key and the plugin will ignore it
+				timeout = 200, -- after `timeout` passes, you can press the escape key and the plugin will ignore it
 				default_mappings = false, -- setting this to false removes all the default mappings
 				mappings = {
 					-- i for insert
@@ -14,6 +14,10 @@ return {
 							k = "<Esc>",
 							j = "<Esc>",
 						},
+						k = {
+							j = "<Esc>",
+
+						}
 					},
 					c = {
 						j = {
