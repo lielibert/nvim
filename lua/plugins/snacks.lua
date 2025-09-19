@@ -1,14 +1,13 @@
 return {
 	"folke/snacks.nvim",
 	priority = 1000,
-	event = "VimEnter",
+	lazy = false,
 	-- -@type snacks.Config
 	opts = {
 
 		animate = { enabled = true },
 		bufdelete = { enabled = true },
 		debug = { enabled = false },
-		image = { enabled = false },
 		zen = { enabled = false },
 		lazygit = { enabled = true },
 		bigfile = { enabled = true },

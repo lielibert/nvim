@@ -4,12 +4,14 @@ return {
 		-- optional: provides snippets for the snippet source
 		dependencies = {
 			"rafamadriz/friendly-snippets",
-			"L3MON4D3/LuaSnip", -- Snippet engine
+			{ "L3MON4D3/LuaSnip",
+				build = "make install_jsregexp"
+			}, -- Snippet engine
 		},
 
 		build = 'cargo build --release',
 		opts = {
-				keymap = {
+			keymap = {
 				preset = "default",
 
 				-- Confirm with Enter
@@ -50,5 +52,10 @@ return {
 			fuzzy = { implementation = "prefer_rust_with_warning" },
 		},
 		opts_extend = { "sources.default" },
+		config = function ()
+			require("blink.cmp").setup()
+
+
+		end
 	},
 }
