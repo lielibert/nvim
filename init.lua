@@ -45,6 +45,7 @@ require("lazy").setup({
 	require("plugins.diagflow"),
 	require("plugins.lualine"),
 	require("plugins.nvim-dap"),
+	require("plugins.mini-icons"),
 
 	-- require("plugins.copilot"), -- load when you want to use copilot
 })

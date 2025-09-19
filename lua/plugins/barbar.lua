@@ -17,7 +17,7 @@ return
 			-- Show buffer icons
 			icons = { buffer_index = true, filetype = { enabled = true } },
 		})
-
+		local opts = {noremap = true , silent = true}
 		-- Navigate buffers  Not Committed Yet  Not Committed Yet
 		vim.keymap.set("n", "<TAB>", ":BufferNext<CR>", opts)
 		vim.keymap.set("n", "<S-TAB>", ":BufferPrevious<CR>", opts)
