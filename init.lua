@@ -3,11 +3,13 @@ vim.g.mapleader = " "
 
 vim.bo.modifiable = true
 
-local opts = { noremap = true, silent = true }
-
 -- disable the status bar of nvim  | if you don't use tmux you can comment the below line.
 -- vim.o.laststatus=0
--- Bootstrap lazy.nvim if not installed
+
+-- for copying though clipboard , make sure xclip (x11) or wl-clipboard (wayland) is installed
+vim.opt.clipboard = "unnamedplus"
+
+-- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -33,7 +35,7 @@ require("lazy").setup({
 	require("plugins.better-escape"),
 	require("plugins.flash"),
 	require("plugins.nvim-surround"),
-	require("plugins.tabout"),
+	-- require("plugins.tabout"),
 	require("plugins.multiplecursor"),
 	require("plugins.nvim-lint"),
 	require("plugins.rainbow-delimiters"),
@@ -46,10 +48,12 @@ require("lazy").setup({
 	require("plugins.lualine"),
 	require("plugins.nvim-dap"),
 	require("plugins.mini-icons"),
+	require("plugins.conform"),
+	require("plugins.nvim-origami"),
+	require("plugins.nvim-ocs52"),
 
 	-- require("plugins.copilot"), -- load when you want to use copilot
 })
 
 -- Setup keymap
 require("keymaps.keymap")
-

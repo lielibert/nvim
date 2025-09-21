@@ -1,5 +1,4 @@
-return
-{
+return {
 	"romgrk/barbar.nvim",
 	event = "BufWinEnter", -- loads as soon as a buffer window is shown
 	dependencies = {
@@ -17,24 +16,64 @@ return
 			-- Show buffer icons
 			icons = { buffer_index = true, filetype = { enabled = true } },
 		})
-		local opts = {noremap = true , silent = true}
-		-- Navigate buffers  Not Committed Yet  Not Committed Yet
-		vim.keymap.set("n", "<TAB>", ":BufferNext<CR>", opts)
-		vim.keymap.set("n", "<S-TAB>", ":BufferPrevious<CR>", opts)
+
+		-- Navigate buffers
+
+		vim.keymap.set("n", "<TAB>", "<cmd>BufferNext<CR>", { noremap = true, silent = true, desc = "Next Buffer" })
+		vim.keymap.set(
+			"n",
+			"<S-TAB>",
+			"<cmd>BufferPrevious<CR>",
+			{ noremap = true, silent = true, desc = "Previous Buffer" }
+		)
 
 		-- Reorder buffers
-		vim.keymap.set("n", "<A-<>", ":BufferMovePrevious<CR>", opts)
-		vim.keymap.set("n", "<A->>", ":BufferMoveNext<CR>", opts)
+		-- vim.keymap.set(
+		-- 	"n",
+		-- 	"<A-<>",
+		-- 	"<cmd>BufferMovePrevious<CR>",
+		-- 	{ noremap = true, silent = true, desc = "Reorder Buffers" }
+		-- )
+		-- vim.keymap.set(
+		-- 	"n",
+		-- 	"<A->>",
+		-- 	"<cmd>BufferMoveNext<CR>",
+		-- 	{ noremap = true, silent = true, desc = "Reorder Bufffers" }
+		-- )
 
-		-- Close buffers using Bdelete (fast)
-		vim.keymap.set("n", "<leader>bd", ":Bd<CR>", opts) -- close current
-		vim.keymap.set("n", "<leader>bo", ":BufferCloseAllButCurrent<CR>", opts) -- close others
-		vim.keymap.set("n", "<leader>bl", ":BufferCloseLeft<CR>", opts) -- close left
-		vim.keymap.set("n", "<leader>br", ":BufferCloseRight<CR>", opts) -- close right
+		vim.keymap.set("n", "<leader>bd", "<cmd>bd<CR>", { noremap = true, silent = true, desc = "Close Buffer" })
+		vim.keymap.set(
+			"n",
+			"<leader>bo",
+			"<cmd>BufferCloseAllButCurrent<CR>",
+			{ noremap = true, silent = true, desc = "Close All But Not Current" }
+		)
+		vim.keymap.set(
+			"n",
+			"<leader>bl",
+			"<cmd>BufferCloseLeft<CR>",
+			{ noremap = true, silent = true, desc = "Close Left Buffer" }
+		)
+		vim.keymap.set(
+			"n",
+			"<leader>br",
+			"<cmd>BufferCloseRight<CR>",
+			{ noremap = true, silent = true, desc = "Close Right Buffer" }
+		)
 
 		for i = 1, 9 do
-			vim.keymap.set("n", "<leader>" .. i, ":BufferGoto " .. i .. "<CR>", opts)
+			vim.keymap.set(
+				"n",
+				"<leader>" .. i,
+				":BufferGoto " .. i .. "<CR>",
+				{ noremap = true, silent = true, desc = "Navigate Between Buffers" }
+			)
 		end
-		vim.keymap.set("n", "<leader>0", ":BufferLast<CR>", opts)
+		vim.keymap.set(
+			"n",
+			"<leader>0",
+			":BufferLast<CR>",
+			{ noremap = true, silent = true, desc = "Go to Last Buffer" }
+		)
 	end,
 }

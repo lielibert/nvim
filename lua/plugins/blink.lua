@@ -4,30 +4,17 @@ return {
 		-- optional: provides snippets for the snippet source
 		dependencies = {
 			"rafamadriz/friendly-snippets",
-			{ "L3MON4D3/LuaSnip",
-				build = "make install_jsregexp"
-			}, -- Snippet engine
+			{ "L3MON4D3/LuaSnip", build = "make install_jsregexp" }, -- Snippet engine
 		},
 
-		build = 'cargo build --release',
+		build = "cargo build --release",
 		opts = {
+			-- snippets = { preset = "luasnip" },
 			keymap = {
 				preset = "default",
 
-				-- Confirm with Enter
-				["<CR>"] = { "accept", "fallback" },
-
 				-- Confirm with Tab
-				["<Tab>"] = { "select_next", "fallback" },
-
-				-- Navigate menu
-				["<S-Tab>"] = { "select_prev", "fallback" },
-
-				-- Trigger manually
-				["<C-Space>"] = { "show" },
-
-				-- Cancel menu
-				["<C-e>"] = { "cancel" },
+				["<CR>"] = { "accept", "fallback" },
 			},
 			appearance = {
 				-- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
@@ -41,7 +28,7 @@ return {
 			-- Default list of enabled providers defined so that you can extend it
 			-- elsewhere in your config, without redefining it, due to `opts_extend`
 			sources = {
-				default = {  "lsp", "path", "snippets", "buffer" },
+				default = { "lsp", "path", "snippets", "buffer" },
 			},
 
 			-- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
@@ -52,10 +39,5 @@ return {
 			fuzzy = { implementation = "prefer_rust_with_warning" },
 		},
 		opts_extend = { "sources.default" },
-		config = function ()
-			require("blink.cmp").setup()
-
-
-		end
 	},
 }
