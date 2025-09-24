@@ -1,7 +1,8 @@
 vim.opt.clipboard = "unnamedplus"
 vim.opt.relativenumber = true
 -- Insert mode mapping
-vim.keymap.set("i", "<C-;>", "<C-o>A;<CR>", { noremap = true, silent = true })
+vim.keymap.set({ "i" }, "<C-;>", "<C-o>A;<CR>", { noremap = true, silent = true })
+vim.keymap.set({ "n" }, "<C-;>", "A;<Esc>", { noremap = true, silent = true })
 
 -- keymap config
 local wk = require("which-key")
