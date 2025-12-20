@@ -10,7 +10,6 @@ return {
 				ensure_installed = { "c", "cpp", "python", "lua", "javascript", "regex" },
 				auto_install = true,
 				highlight = {
-
 					enable = false,
 					additional_vim_regex_highlighting = false,
 				},

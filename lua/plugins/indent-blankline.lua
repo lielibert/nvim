@@ -13,7 +13,7 @@ return {
 			require("ibl").setup(opts)
 			-- Show dots for spaces (only in blank lines or everywhere)
 			vim.opt.list = true
-			vim.opt.listchars:append("space:·")
+			-- vim.opt.listchars:append("space:·")
 		end,
 	},
 }
