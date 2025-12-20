@@ -3,22 +3,27 @@ return {
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
-		opts = {
-			-- add any options here
-		},
 		dependencies = {
-			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
 			"MunifTanjim/nui.nvim",
-			-- OPTIONAL:
-			--   `nvim-notify` is only needed, if you want to use the notification view.
-			--   If not available, we use `mini` as the fallback
-			-- "rcarriga/nvim-notify",
 		},
-		config = function ()
+		config = function()
 			require("noice").setup({
 				lsp = {
 					-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
-					hover = {enabled = true},
+					hover = {
+						enabled = false,
+						size = {
+							max_width = 60, -- set max columns
+							max_height = 20, -- set max lines
+						},
+					},
+					signature = {
+						enabled = false, -- ⛔ disables function signature popup
+						size = {
+							max_width = 60, -- set max columns
+							max_height = 20, -- set max lines
+						},
+					},
 					override = {
 						["vim.lsp.util.convert_input_to_markdown_lines"] = true,
 						["vim.lsp.util.stylize_markdown"] = true,
@@ -27,7 +32,7 @@ return {
 						["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
 					},
 				},
-							-- you can enable a preset for easier configuration
+				-- you can enable a preset for easier configuration
 				presets = {
 					bottom_search = false, -- use a classic bottom cmdline for search
 					command_palette = false, -- position the cmdline and popupmenu together
@@ -36,6 +41,6 @@ return {
 					lsp_doc_border = false, -- add a border to hover docs and signature help
 				},
 			})
-		end
-	}
+		end,
+	},
 }

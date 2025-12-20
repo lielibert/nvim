@@ -1,10 +1,13 @@
 -- Set leader key early
 vim.g.mapleader = " "
-
 vim.bo.modifiable = true
 
+vim.o.wrap = true
+vim.o.linebreak = true
+vim.o.breakat = " \t;:,!?"
+
 -- disable the status bar of nvim  | if you don't use tmux you can comment the below line.
--- vim.o.laststatus=0
+-- vim.o.laststatus = 0
 
 -- for copying though clipboard , make sure xclip (x11) or wl-clipboard (wayland) is installed
 vim.opt.clipboard = "unnamedplus"
@@ -26,32 +29,27 @@ vim.opt.rtp:prepend(lazypath)
 -- Setup plugins
 require("lazy").setup({
 	-- config file are in the plugin folder.
-	require("plugins.tokyonight"),
-	require("plugins.barbar"),
+	require("plugins.base16-nvim"),
 	require("plugins.snacks"),
-	require("plugins.mason"),
 	require("plugins.nvim-treesitter"),
+	require("plugins.mason"),
+	require("plugins.linter"), -- after mason is required
+	require("plugins.nvim-lspconfig"),
+	require("plugins.nvim-dap"),
+	require("plugins.conform"),
+	require("plugins.blink"),
+	require("plugins.nvim-scissors"),
+	require("plugins.diagflow"),
 	require("plugins.noice"),
-	require("plugins.better-escape"),
 	require("plugins.flash"),
 	require("plugins.nvim-surround"),
-	-- require("plugins.tabout"),
 	require("plugins.multiplecursor"),
-	require("plugins.nvim-lint"),
-	require("plugins.rainbow-delimiters"),
-	require("plugins.which-key"),
 	require("plugins.indent-blankline"),
-	require("plugins.comment"),
 	require("plugins.nvim-autopairs"),
-	require("plugins.blink"),
-	require("plugins.diagflow"),
 	require("plugins.lualine"),
-	require("plugins.nvim-dap"),
-	require("plugins.mini-icons"),
-	require("plugins.conform"),
-	require("plugins.nvim-origami"),
-	require("plugins.nvim-ocs52"),
-
+	require("plugins.tabout"),
+	require("plugins.comment"),
+	require("plugins.which-key"),
 	-- require("plugins.copilot"), -- load when you want to use copilot
 })
 

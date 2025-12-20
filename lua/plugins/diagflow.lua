@@ -16,10 +16,10 @@ return {
 					hint = "DiagnosticFloatingHint",
 				},
 				format = function(diagnostic)
-					return diagnostic.message
+					return string.format("%s:%s", diagnostic.source, diagnostic.message)
 				end,
 				gap_size = 1,
-				scope = "cursor", -- 'cursor', 'line' this changes the scope, so instead of showing errors under the cursor, it shows errors on the entire line.
+				scope = "line", -- 'cursor', 'line' this changes the scope, so instead of showing errors under the cursor, it shows errors on the entire line.
 				padding_top = 0,
 				padding_right = 1,
 				text_align = "right", -- 'left', 'right'

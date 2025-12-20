@@ -18,11 +18,11 @@ return {
 					cmake = { "cmake-format" },
 				},
 				format_on_save = true,
-				formatters = {
-					clang_format = {
-						prepend_args = { "--style=file" },
-					},
-				},
+				-- formatters = {
+				-- clang_format = {
+				-- prepend_args = { "--style=file" },
+				-- },
+				-- },
 			})
 
 			vim.keymap.set("n", "<leader>fm", function()

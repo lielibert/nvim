@@ -2,9 +2,10 @@ return {
 	"folke/snacks.nvim",
 	priority = 1000,
 	lazy = false,
-	-- -@type snacks.Config
+
 	opts = {
 
+		win = { backdrop = false },
 		animate = { enabled = true },
 		bufdelete = { enabled = true },
 		debug = { enabled = false },
