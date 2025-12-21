@@ -6,8 +6,6 @@ return {
 			indent = { char = "│", tab_char = "│" },
 			whitespace = { remove_blankline_trail = false },
 			scope = { enabled = false },
-			-- Show dots for spaces
-			-- See plugin docs for more advanced options
 		},
 		config = function(_, opts)
 			require("ibl").setup(opts)

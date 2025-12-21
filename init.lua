@@ -1,16 +1,5 @@
 -- Set leader key early
 vim.g.mapleader = " "
-vim.bo.modifiable = true
-
-vim.o.wrap = true
-vim.o.linebreak = true
-vim.o.breakat = " \t;:,!?"
-
--- disable the status bar of nvim  | if you don't use tmux you can comment the below line.
--- vim.o.laststatus = 0
-
--- for copying though clipboard , make sure xclip (x11) or wl-clipboard (wayland) is installed
-vim.opt.clipboard = "unnamedplus"
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
