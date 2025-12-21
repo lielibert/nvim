@@ -1,9 +1,17 @@
+----------------------------------------------
+-- change the leaderkey in the init.lua file
+----------------------------------------------
+
 vim.opt.clipboard = "unnamedplus"
 vim.opt.relativenumber = true
 
--- Insert mode mapping
-vim.keymap.set({ "i" }, "<C-;>", "<C-o>A;<CR>", { noremap = true, silent = true })
-vim.keymap.set({ "n" }, "<C-;>", "A;<Esc>", { noremap = true, silent = true })
+vim.bo.modifiable = true
+vim.o.wrap = true
+vim.o.linebreak = true
+vim.o.breakat = " \t;:,!?"
+
+-- disable the status bar of nvim  | if you don't use tmux you can comment the below line.
+-- vim.o.laststatus = 0
 
 -- keymap config
 local wk = require("which-key")

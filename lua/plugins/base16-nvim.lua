@@ -3,7 +3,7 @@ return {
 	"RRethy/base16-nvim",
 	config = function()
 		local function source_matugen()
-			local matugen_path = os.getenv("HOME") .. "/.config/nvim/lua/plugins/generated.lua"
+			local matugen_path = vim.fn.stdpath("config") .. "/lua/plugins/generated.lua"
 
 			local file, err = io.open(matugen_path, "r")
 			if err ~= nil then
@@ -16,10 +16,10 @@ return {
 		end
 
 		local function auxiliary_function()
-			local matugen_path = os.getenv("HOME") .. "/.config/nvim/lua/plugins/generated.lua"
+			local matugen_path = vim.fn.stdpath("config") .. "/lua/plugins/generated.lua"
 			source_matugen()
 			-- dofile(os.getenv("HOME") .. "/.config/nvim/lua/plugins/lualine.lua")
-			dofile(os.getenv("HOME") .. "/.config/nvim/lua/plugins/hlgroups.lua")
+			dofile(vim.fn.stdpath("config") .. "/lua/plugins/hlgroups.lua")
 		end
 
 		-- Register an autocmd to listen for matugen updates

@@ -18,7 +18,7 @@ return {
 				providers = {
 					snippets = {
 						opts = {
-							search_path = "/home/last/.config/nvim/snippets/",
+							search_path = vim.fn.stdpath("config") .. "/snippets/",
 						},
 					},
 				},

@@ -2,7 +2,7 @@ return {
 	{
 		"chrisgrieser/nvim-scissors",
 		opts = {
-			snippetDir = "/home/last/.config/nvim/snippets/",
+			snippetDir = vim.fn.stdpath("config") .. "/snippets",
 		},
 		config = function()
 			-- default settings

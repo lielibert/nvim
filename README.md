@@ -25,11 +25,14 @@ cd ~/.config && git clone https://github.com/lielibert/nvim.git
 
 ## 🔥Plugins
 
-+ For Quality of Life **snacks**
-+ For Theme **tokyonight**
-+ For Error Detection **mason , lspconfig , nvim-lint and more**
-+ For Debuging **nvim-dap + UI**
-+ For Completion **blink**
+
+| Feature | Plugins |
+|---------|---------|
+| **Theme**   | base-16-color + matugen support |
+|  **lsp**  | blink.cmp, installed vai mason |
+| **Diagnostics** | conform + nvim-lint, installed vai mason |
+| **Debugging** | nvim-dap + U.I. |
+
 + Also contain features like **multicursor, comment, tabout, rainbow brackets indent**
 + Also contain Plugin for AI , can enable it in init.lua file
 + Use browser for AI chat , nothing is perfect.
@@ -37,6 +40,5 @@ cd ~/.config && git clone https://github.com/lielibert/nvim.git
 > [!NOTE]
 > Install a clipboard like xclip for x11 or wl-clipboard for wayland and a clipboard manager
 > Can also use kitty terminal or something like that which allow ssh copying
-> This works best in arch-linux
-> I will try to make its a guide for keybindings for now you can use which-key plugins.
+> This works best in all platfor 
 
