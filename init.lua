@@ -41,7 +41,7 @@ require("lazy").setup({
 	require("plugins.lualine"),
 	require("plugins.tabout"),
 	require("plugins.comment"),
-	require("plugins.which-key"),
+	-- require("plugins.which-key"),
 	-- require("plugins.copilot"), -- load when you want to use copilot
 })
 
