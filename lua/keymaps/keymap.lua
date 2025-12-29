@@ -21,12 +21,11 @@ wk.add({
 		{ "<leader>k", ":m .-2<CR>==", mode = "n" },
 		{ "<leader>k", ":m '<-2<CR>gv", mode = "v" },
 		{ "<leader>j", ":m '>+1<CR>gv", mode = "v" },
-
-		{ "<CR>", "I<CR><Esc>", mode = "n" },
 	},
 	{
-		{ "<C-CR>", "<C-o>o", mode = "i" },
-		{ "<C-S-CR>", "<C-o>O", mode = "i" },
-		{ "<C-l>", "<C-o>l", mode = { "n", "i" } },
+		{ "<CR>", "o<Esc>", mode = "n" },
+	},
+	{
+		{ "<C-l>", ":noh<CR>", mode = "n" },
 	},
 }, { noremap = true, silent = true })

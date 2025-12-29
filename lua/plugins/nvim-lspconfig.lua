@@ -2,6 +2,7 @@ return {
 
 	{
 		"neovim/nvim-lspconfig",
+		opts = {},
 		dependencies = {
 			"saghen/blink.cmp",
 		},
@@ -17,6 +18,21 @@ return {
 				},
 			}
 			capabilities = blink.get_lsp_capabilities(capabilities)
+
+			filetypes = {
+				"html",
+				"javascript",
+				"vue",
+				"javascriptreact",
+				"javascript.jsx",
+				"typescript",
+				"typescriptreact",
+				"typescript.tsx",
+			}
+			vim.lsp.config("html", {
+
+				filetypes = filetypes,
+			})
 		end,
 	},
 }

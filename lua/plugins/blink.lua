@@ -5,7 +5,6 @@ return {
 			{
 				"rafamadriz/friendly-snippets",
 				keys = function()
-					-- Disable default tab keybinding in LuaSnip
 					return {}
 				end,
 			},
@@ -23,7 +22,6 @@ return {
 					},
 				},
 			},
-			-- snippets = { preset = "luasnip" },
 			keymap = {
 				preset = "default",
 
@@ -49,6 +47,11 @@ return {
 							{ "kind_icon", gap = 1 },
 							{ "label", "label_description" },
 						},
+					},
+				},
+				matcher = {
+					fuzzy = {
+						case_insensitive = true,
 					},
 				},
 			},

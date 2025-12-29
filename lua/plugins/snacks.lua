@@ -5,7 +5,8 @@ return {
 
 	opts = {
 
-		win = { backdrop = false },
+		win = { enabled = true, backdrop = false },
+		terminal = { enabled = true },
 		animate = { enabled = true },
 		bufdelete = { enabled = true },
 		debug = { enabled = false },
@@ -477,7 +478,10 @@ return {
 		{
 			"<c-/>",
 			function()
-				Snacks.terminal()
+				Snacks.terminal("ls", {
+					direction = "float",
+					position = "float",
+				})
 			end,
 			desc = "Toggle Terminal",
 		},
