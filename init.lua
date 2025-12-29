@@ -1,6 +1,9 @@
 -- Set leader key early
 vim.g.mapleader = " "
 
+vim.o.ignorecase = true
+vim.o.smartcase = true
+
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then

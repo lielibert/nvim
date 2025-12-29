@@ -10,6 +10,7 @@ return {
 				cmake = { "cmakelint" },
 				javascript = { "eslint_d" },
 				typescript = { "eslint_d" },
+				vue = { "eslint_d" },
 				sh = { "shellcheck" },
 			}
 			-- Register an autocmd to listen for file saved for linter error

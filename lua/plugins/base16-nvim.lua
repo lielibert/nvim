@@ -1,6 +1,7 @@
 return {
 
 	"RRethy/base16-nvim",
+
 	config = function()
 		local function source_matugen()
 			local matugen_path = vim.fn.stdpath("config") .. "/lua/plugins/generated.lua"
