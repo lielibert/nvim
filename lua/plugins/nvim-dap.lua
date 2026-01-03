@@ -91,5 +91,4 @@ return {
 			vim.keymap.set("n", "<leader>dp", dap.pause, { desc = "DAP Pause" })
 		end,
 	},
-
 }

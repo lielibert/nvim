@@ -3,6 +3,7 @@ vim.g.mapleader = " "
 
 vim.o.ignorecase = true
 vim.o.smartcase = true
+vim.o.winbar = " "
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -28,7 +29,6 @@ require("lazy").setup({
 	require("plugins.linter"), -- after mason is required
 	require("plugins.nvim-lspconfig"),
 	require("plugins.nvim-dap"),
-	require("plugins.conform"),
 	require("plugins.blink"),
 	require("plugins.nvim-scissors"),
 	require("plugins.diagflow"),
@@ -40,10 +40,23 @@ require("lazy").setup({
 	require("plugins.nvim-autopairs"),
 	require("plugins.lualine"),
 	require("plugins.tabout"),
-	require("plugins.comment"),
+	require("plugins.mini"),
+	require("plugins.conform"),
 	-- require("plugins.which-key"),
 	-- require("plugins.copilot"), -- load when you want to use copilot
 })
 
 -- Setup keymap
 require("keymaps.keymap")
+dofile(vim.fn.stdpath("config") .. "/lua/plugins/hlgroups.lua")
+
+vim.diagnostic.config({
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = " ✗",
+			[vim.diagnostic.severity.WARN] = " ⚠",
+			[vim.diagnostic.severity.INFO] = " ℹ",
+			[vim.diagnostic.severity.HINT] = " ➤",
+		},
+	},
+})
