@@ -5,7 +5,7 @@ return {
 
 		config = function()
 			require("base16-colorscheme").setup()
-			vim.cmd("colorscheme base16-atelier-lakeside")
+			vim.cmd.colorscheme("base16-tokyo-night-storm")
 		end,
 	},
 }

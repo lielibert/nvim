@@ -3,7 +3,6 @@ return {
 	event = "VimEnter",
 	dependencies = {
 		{ "nvim-tree/nvim-web-devicons" },
-		{ "yavorski/lualine-macro-recording.nvim" },
 	},
 	config = function()
 		require("lualine").setup({
@@ -40,7 +39,13 @@ return {
 				},
 			},
 			sections = {
-				lualine_a = { "macro_recording", "mode" },
+				lualine_a = {
+					{
+						require("noice").api.statusline.mode.get,
+						cond = require("noice").api.statusline.mode.has,
+					},
+					"mode",
+				},
 				lualine_b = {
 					"branch",
 					"diff",
