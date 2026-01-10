@@ -13,6 +13,7 @@ return {
 
 		build = "cargo build --release",
 		opts = {
+			signature = { enabled = false },
 			sources = {
 				providers = {
 					snippets = {
@@ -22,18 +23,14 @@ return {
 					},
 				},
 			},
+
 			keymap = {
 				preset = "default",
 
-				-- Confirm with Enter
 				["<CR>"] = { "accept", "fallback" },
 			},
 			appearance = {
 				nerd_font_variant = "mono",
-				scrollbar = {
-					gutter = false,
-					thumb = true,
-				},
 			},
 
 			completion = {
@@ -47,11 +44,6 @@ return {
 							{ "kind_icon", gap = 1 },
 							{ "label", "label_description" },
 						},
-					},
-				},
-				matcher = {
-					fuzzy = {
-						case_insensitive = true,
 					},
 				},
 			},

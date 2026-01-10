@@ -15,16 +15,19 @@ return {
 		lazygit = { enabled = true },
 		bigfile = { enabled = true },
 		dashboard = { enabled = true },
+		notify = { enabled = true },
+		notifier = { enabled = true, timeout = 3000 },
 		explorer = { enabled = true },
 		picker = { enabled = true },
 		dim = { enabled = true },
 		indent = { enabled = true },
 		input = { enabled = true },
-		notifier = { enabled = true, timeout = 4000 },
 		quickfile = { enabled = true },
 		scope = { enabled = true },
 		scroll = { enabled = true },
-		statuscolumn = { enabled = true },
+		statuscolumn = {
+			enabled = true,
+		},
 		words = { enabled = true, treesitter = true },
 		git = { enabled = true },
 		gitbrowse = { enabled = true },
@@ -32,6 +35,7 @@ return {
 	},
 
 	keys = {
+
 		-- Top Pickers & Explorer
 
 		{
@@ -41,13 +45,7 @@ return {
 			end,
 			desc = "Smart Find Files",
 		},
-		{
-			"<leader>,",
-			function()
-				Snacks.picker.buffers()
-			end,
-			desc = "Buffers",
-		},
+
 		{
 			"<leader>/",
 			function()
@@ -63,7 +61,7 @@ return {
 			desc = "Command History",
 		},
 		{
-			"<leader>n",
+			"<leader>\\",
 			function()
 				Snacks.picker.notifications()
 			end,
@@ -479,10 +477,7 @@ return {
 		{
 			"<c-/>",
 			function()
-				Snacks.terminal("ls", {
-					direction = "float",
-					position = "float",
-				})
+				Snacks.terminal()
 			end,
 			desc = "Toggle Terminal",
 		},

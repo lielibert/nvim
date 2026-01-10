@@ -6,7 +6,7 @@ return {
 		opts = {},
 		keys = {
 			{
-				"z",
+				"s",
 				mode = { "n", "x", "o" },
 				function()
 					require("flash").jump()
@@ -46,5 +46,10 @@ return {
 				desc = "Toggle Flash Search",
 			},
 		},
+		config = function()
+			vim.keymap.set("n", "f", function()
+				require("flash").jump()
+			end)
+		end,
 	},
 }

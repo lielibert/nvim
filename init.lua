@@ -1,9 +1,14 @@
--- Set leader key early
 vim.g.mapleader = " "
 
-vim.o.ignorecase = true
-vim.o.smartcase = true
-vim.o.winbar = " "
+vim.opt.showmatch = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.ttyfast = true
+vim.opt.clipboard = "unnamedplus"
+vim.opt.relativenumber = true
+vim.o.linebreak = true
+vim.o.breakindent = true
+vim.opt.termguicolors = true
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -22,18 +27,18 @@ vim.opt.rtp:prepend(lazypath)
 -- Setup plugins
 require("lazy").setup({
 	-- config file are in the plugin folder.
+	require("plugins.bg"),
 	require("plugins.base16-nvim"),
 	require("plugins.snacks"),
 	require("plugins.nvim-treesitter"),
 	require("plugins.mason"),
 	require("plugins.linter"), -- after mason is required
+	require("plugins.blink"),
 	require("plugins.nvim-lspconfig"),
 	require("plugins.nvim-dap"),
-	require("plugins.blink"),
 	require("plugins.nvim-scissors"),
 	require("plugins.diagflow"),
 	require("plugins.noice"),
-	require("plugins.flash"),
 	require("plugins.nvim-surround"),
 	require("plugins.multiplecursor"),
 	require("plugins.indent-blankline"),
@@ -42,21 +47,12 @@ require("lazy").setup({
 	require("plugins.tabout"),
 	require("plugins.mini"),
 	require("plugins.conform"),
+	require("plugins.flash"),
+	require("plugins.nvim-colorizer"),
 	-- require("plugins.which-key"),
 	-- require("plugins.copilot"), -- load when you want to use copilot
 })
 
--- Setup keymap
+-- additional imports
 require("keymaps.keymap")
-dofile(vim.fn.stdpath("config") .. "/lua/plugins/hlgroups.lua")
-
-vim.diagnostic.config({
-	signs = {
-		text = {
-			[vim.diagnostic.severity.ERROR] = " ✗",
-			[vim.diagnostic.severity.WARN] = " ⚠",
-			[vim.diagnostic.severity.INFO] = " ℹ",
-			[vim.diagnostic.severity.HINT] = " ➤",
-		},
-	},
-})
+dofile(vim.fn.stdpath("config") .. "/lua/plugins/theme.lua")
