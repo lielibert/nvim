@@ -37,7 +37,6 @@ return {
 	keys = {
 
 		-- Top Pickers & Explorer
-
 		{
 			"<leader><space>",
 			function()
@@ -61,7 +60,7 @@ return {
 			desc = "Command History",
 		},
 		{
-			"<leader>\\",
+			"<leader>n",
 			function()
 				Snacks.picker.notifications()
 			end,
@@ -217,7 +216,7 @@ return {
 			desc = "Search History",
 		},
 		{
-			"<leader>sa",
+			"<leader>s.",
 			function()
 				Snacks.picker.autocmds()
 			end,
@@ -432,7 +431,7 @@ return {
 			desc = "Select Scratch Buffer",
 		},
 		{
-			"<leader>n",
+			"<leader>N",
 			function()
 				Snacks.notifier.show_history()
 			end,
