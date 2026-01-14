@@ -1,19 +1,19 @@
 return {
+
 	{
 		"nvim-treesitter/nvim-treesitter",
-		event = "VeryLazy",
-		build = ":TSUpdate", -- update parsers after install
+		lazy = false,
+		build = ":TSUpdate",
 		config = function()
-			require("nvim-treesitter").setup({
-
-				-- Only install parsers for specific languages
-				ensure_installed = { "c", "cpp", "python", "lua", "javascript", "regex" },
-				auto_install = true,
-				highlight = {
-					enable = true,
-					additional_vim_regex_highlighting = true,
-				},
-				indent = { enable = true },
+			require("nvim-treesitter").install({ "rust", "javascript", "cpp" })
+			vim.api.nvim_create_autocmd("FileType", {
+				pattern = { "<filetype>" },
+				callback = function()
+					vim.treesitter.start()
+					vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
+					vim.wo[0][0].foldmethod = "expr"
+					vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+				end,
 			})
 		end,
 	},

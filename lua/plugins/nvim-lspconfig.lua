@@ -1,26 +1,6 @@
 return {
 
 	{
-		"mason-org/mason-lspconfig.nvim",
-		config = function()
-			require("mason-lspconfig").setup({
-				ensure_installed = {
-					"lua_ls",
-					"bashls",
-					"clangd",
-					"rust_analyzer",
-					"neocmake",
-					"pyright",
-					"html",
-					"cssls",
-					"eslint",
-					"vue_ls",
-				},
-			})
-		end,
-	},
-
-	{
 		"neovim/nvim-lspconfig",
 		opts = {},
 		dependencies = {
@@ -38,21 +18,6 @@ return {
 				},
 			}
 			capabilities = blink.get_lsp_capabilities(capabilities)
-
-			filetypes = {
-				"html",
-				"javascript",
-				"vue",
-				"javascriptreact",
-				"javascript.jsx",
-				"typescript",
-				"typescriptreact",
-				"typescript.tsx",
-			}
-			vim.lsp.config("html", {
-
-				filetypes = filetypes,
-			})
 		end,
 	},
 }

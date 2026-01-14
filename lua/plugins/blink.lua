@@ -40,10 +40,10 @@ return {
 					scrollbar = false,
 					draw = {
 						treesitter = { "lsp" },
-						columns = {
-							{ "kind_icon", gap = 1 },
-							{ "label", "label_description" },
-						},
+						-- columns = {
+						-- 	{ "kind_icon", gap = 1 },
+						-- 	{ "label", "label_description" },
+						-- },
 					},
 				},
 			},

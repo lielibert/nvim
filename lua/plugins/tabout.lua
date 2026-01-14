@@ -24,6 +24,9 @@ return {
 				exclude = {}, -- tabout will ignore these filetypes
 			})
 		end,
+
+		wants = { "nvim-treesitter" }, -- (optional) or require if not used so far
+		after = { "blink" }, -- if a completion plugin is using tabs load it before
 		opt = true, -- Set this to true if the plugin is optional
 		event = "InsertCharPre", -- Set the event to 'InsertCharPre' for better compatibility
 		priority = 1000,
