@@ -4,36 +4,29 @@ return {
 		opts = {},
 		config = function()
 			require("conform").setup({
+				-- Conform will run multiple formatters sequentially
 				formatters_by_ft = {
 					lua = { "stylua" },
-					-- Conform will run multiple formatters sequentially
-					python = { "isort", "black" },
-					rust = { "rustfmt", lsp_format = "fallback" },
-					cpp = { "clang-format" },
+					sh = { "beautysh" },
 					c = { "clang-format" },
-					sh = { "shfmt" },
+					cpp = { "clang-format" },
+					cmake = { "cmakelang" },
+					-- rust = { "rustfmt", lsp_format = "fallback" },
+					python = { "black" },
 					latex = { "tex-fmt" },
-					cmake = { "cmake-format" },
-					--webdevelopment
-					javascript = { "prettierd" },
-					javascriptreact = { "prettierd" },
-					typescript = { "prettierd" },
-					typescriptreact = { "prettierd" },
-					vue = { "prettierd" },
-					svelte = { "prettierd" },
+					-- Webdevelopment
 					html = { "prettierd" },
 					css = { "prettierd" },
+					javascript = { "prettierd" },
+					typescript = { "prettierd" },
+					vue = { "prettierd" },
+					svelte = { "prettierd" },
 					scss = { "prettierd" },
 					json = { "prettierd" },
 					yaml = { "prettierd" },
 					markdown = { "prettierd" },
 				},
 				format_on_save = true,
-				-- formatters = {
-				-- clang_format = {
-				-- prepend_args = { "--style=file" },
-				-- },
-				-- },
 			})
 
 			vim.keymap.set("n", "<leader>fm", function()
