@@ -1,6 +1,26 @@
 return {
 
 	{
+		"mason-org/mason-lspconfig.nvim",
+		config = function()
+			require("mason-lspconfig").setup({
+				ensure_installed = {
+					"lua_ls",
+					"bashls",
+					"clangd",
+					"rust_analyzer",
+					"neocmake",
+					"pyright",
+					"html",
+					"cssls",
+					"eslint",
+					"vue_ls",
+				},
+			})
+		end,
+	},
+
+	{
 		"neovim/nvim-lspconfig",
 		opts = {},
 		dependencies = {
