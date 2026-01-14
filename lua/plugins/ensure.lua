@@ -37,7 +37,7 @@ return {
 			-- Linters (by filetype)
 			linters = {
 				-- lua = "luacheck",
-				sh = "spellcheck",
+				sh = "shellcheck",
 				c = "cpplint",
 				cpp = "cpplint",
 				cmake = "cmakelang",
