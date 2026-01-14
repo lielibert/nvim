@@ -4,7 +4,7 @@ return {
 		event = "VeryLazy",
 		build = ":TSUpdate", -- update parsers after install
 		config = function()
-			require("nvim-treesitter.configs").setup({
+			require("nvim-treesitter").setup({
 
 				-- Only install parsers for specific languages
 				ensure_installed = { "c", "cpp", "python", "lua", "javascript", "regex" },
