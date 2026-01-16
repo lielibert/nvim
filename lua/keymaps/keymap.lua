@@ -6,10 +6,35 @@
 -- vim.o.laststatus = 0
 
 key = vim.keymap.set
+autocmd = vim.api.nvim_create_autocmd
+cmd = vim.api.nvim_create_user_command
 opts = { noremap = true, silent = true }
+
+-- AUTOCOMMAND
+autocmd("InsertEnter", {
+	callback = function()
+		vim.opt.number = true
+		vim.opt.relativenumber = false
+	end,
+})
+
+autocmd("InsertLeave", {
+	callback = function()
+		vim.opt.relativenumber = true
+	end,
+})
+
+-- USER COMMAND
+cmd("Rmtrails", function()
+	MiniTrailspace.trim()
+end, {})
+
+cmd("Rmlasttrails", function()
+	MiniTrailspace.trim_last_lines()
+end, {})
+
 key("n", "<C-l>", ":noh<CR>", opts)
 key("n", "<CR>", "o<Esc>", opts)
-
 key("n", "<leader>pc", function()
 	local source = vim.fn.input("Enter source path", vim.fn.getcwd() .. "/", "dir")
 	local build = vim.fn.input("Enter build path", vim.fn.getcwd() .. "/", "dir")

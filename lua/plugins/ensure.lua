@@ -6,6 +6,7 @@ return {
 			lsp = {
 				enable = {
 					"lua_ls",
+					"vimls",
 					"bashls",
 					"clangd",
 					"neocmake",
