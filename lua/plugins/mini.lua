@@ -12,6 +12,7 @@ return {
 			require("mini.surround").setup()
 
 			require("mini.bracketed").setup()
+			require("mini.trailspace").setup()
 
 			require("mini.colors").setup()
 			require("mini.icons").setup()

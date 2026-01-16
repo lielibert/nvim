@@ -48,6 +48,7 @@ require("lazy").setup({
 	require("plugins.conform"),
 	require("plugins.flash"),
 	require("plugins.nvim-colorizer"),
+	require("plugins.nvim-toggle"),
 	-- require("plugins.which-key"),
 	-- require("plugins.copilot"), -- load when you want to use copilot
 })
