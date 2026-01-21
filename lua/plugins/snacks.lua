@@ -1,6 +1,6 @@
 return {
+
 	"folke/snacks.nvim",
-	priority = 1000,
 	lazy = false,
 	opts = {
 		win = { enabled = true, backdrop = false },

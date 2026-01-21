@@ -6,8 +6,8 @@ return {
 		config = function()
 			require("diagflow").setup({
 				enable = true,
-				max_width = 60, -- The maximum width of the diagnostic messages
-				max_height = 10, -- the maximum height per diagnostics
+				max_width = 40, -- The maximum width of the diagnostic messages
+				max_height = 40, -- the maximum height per diagnostics
 				severity_colors = { -- The highlight groups to use for each diagnostic severity level
 					error = "DiagnosticFloatingError",
 					warning = "DiagnosticFloatingWarn",
@@ -15,12 +15,13 @@ return {
 					hint = "DiagnosticFloatingHint",
 				},
 				format = function(diagnostic)
-					return string.format("%s:%s", diagnostic.source, diagnostic.message)
+					-- return string.format("%s:%s", diagnostic.source, diagnostic.message)
+					return string.format("%s", diagnostic.message)
 				end,
-				gap_size = 1,
-				scope = "line", -- 'cursor', 'line' this changes the scope, so instead of showing errors under the cursor, it shows errors on the entire line.
-				padding_top = 0,
-				padding_right = 1,
+				gap_size = 0,
+				scope = "cursor", -- 'cursor', 'line' this changes the scope, so instead of showing errors under the cursor, it shows errors on the entire line.
+				padding_top = -1,
+				padding_right = 0,
 				text_align = "right", -- 'left', 'right'
 				placement = "top", -- 'top', 'inline'
 				inline_padding_left = 0, -- the padding left when the placement is inline
