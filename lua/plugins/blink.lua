@@ -11,15 +11,15 @@ return {
 		build = "cargo build --release",
 		opts = {
 			signature = { enabled = false },
-			sources = {
-				providers = {
-					snippets = {
-						opts = {
-							search_path = vim.fn.stdpath("config") .. "/snippets/",
-						},
-					},
-				},
-			},
+			-- sources = {
+			-- 	providers = {
+			-- 		snippets = {
+			-- 			opts = {
+			-- 				search_path = vim.fn.stdpath("config") .. "/snippets/",
+			-- 			},
+			-- 		},
+			-- 	},
+			-- },
 
 			keymap = {
 				preset = "default",
@@ -36,7 +36,7 @@ return {
 					border = "single",
 					scrollbar = false,
 					draw = {
-						treesitter = { "lsp" },
+						treesitter = { "lsp", "snippets", "path", "buffer" },
 					},
 				},
 			},
@@ -45,7 +45,7 @@ return {
 				default = { "snippets", "lsp", "path", "buffer" },
 			},
 
-			fuzzy = { implementation = "lua" },
+			fuzzy = { implementation = "prefer_rust_with_warning" },
 		},
 		opts_extend = { "sources.default" },
 	},

@@ -10,6 +10,7 @@ vim.opt.relativenumber = true
 vim.opt.linebreak = true
 vim.opt.breakindent = true
 vim.opt.termguicolors = true
+vim.opt.winbar = " "
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -50,6 +51,7 @@ require("lazy").setup({
 	require("plugins.flash"),
 	require("plugins.nvim-colorizer"),
 	require("plugins.nvim-toggle"),
+	require("plugins.nvim-transparent"),
 	-- require("plugins.which-key"),
 	-- require("plugins.copilot"), -- load when you want to use copilot
 })
