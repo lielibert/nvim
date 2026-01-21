@@ -1,6 +1,8 @@
 return {
 	{
 		"nguyenvukhang/nvim-toggler",
+		event = "InsertEnter",
+		priority = 2002,
 		config = function()
 			require("nvim-toggler").setup({
 				inverses = {

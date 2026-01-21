@@ -1,13 +1,10 @@
 return {
 	{
 		"saghen/blink.cmp",
+		event = "InsertEnter",
+		priority = 2008,
 		dependencies = {
-			{
-				"rafamadriz/friendly-snippets",
-				keys = function()
-					return {}
-				end,
-			},
+			{ "rafamadriz/friendly-snippets" },
 			{ "L3MON4D3/LuaSnip", build = "make install_jsregexp" }, -- Snippet engine
 		},
 
@@ -40,19 +37,15 @@ return {
 					scrollbar = false,
 					draw = {
 						treesitter = { "lsp" },
-						-- columns = {
-						-- 	{ "kind_icon", gap = 1 },
-						-- 	{ "label", "label_description" },
-						-- },
 					},
 				},
 			},
 
 			sources = {
-				default = { "lsp", "snippets", "path", "buffer" },
+				default = { "snippets", "lsp", "path", "buffer" },
 			},
 
-			fuzzy = { implementation = "prefer_rust_with_warning" },
+			fuzzy = { implementation = "lua" },
 		},
 		opts_extend = { "sources.default" },
 	},

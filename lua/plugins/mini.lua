@@ -2,6 +2,7 @@ return {
 	{
 		"nvim-mini/mini.nvim",
 		version = "*",
+		event = { "BufReadPost", "BufNewFile" },
 		config = function()
 			require("mini.ai").setup()
 			require("mini.align").setup()

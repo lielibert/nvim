@@ -2,6 +2,7 @@ return {
 	{
 		"stevearc/conform.nvim",
 		opts = {},
+		event = "BufReadPost",
 		config = function()
 			require("conform").setup({
 				format_on_save = true,

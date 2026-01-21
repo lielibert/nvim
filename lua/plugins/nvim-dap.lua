@@ -1,7 +1,7 @@
 return {
 	{
 		"mfussenegger/nvim-dap",
-		event = "VeryLazy",
+		cmd = "DAP",
 		dependencies = {
 			"rcarriga/nvim-dap-ui", -- Optional UI
 			"nvim-neotest/nvim-nio",

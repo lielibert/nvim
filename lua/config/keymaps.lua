@@ -1,40 +1,13 @@
-----------------------------------------------
--- change the leaderkey in the init.lua file
-----------------------------------------------
-
--- disable the status bar of nvim  | if you don't use tmux you can comment the below line.
--- vim.o.laststatus = 0
+-- Change the leaderkey in the init.lua file
 
 key = vim.keymap.set
-autocmd = vim.api.nvim_create_autocmd
-cmd = vim.api.nvim_create_user_command
 opts = { noremap = true, silent = true }
 
--- AUTOCOMMAND
-autocmd("InsertEnter", {
-	callback = function()
-		vim.opt.number = true
-		vim.opt.relativenumber = false
-	end,
-})
-
-autocmd("InsertLeave", {
-	callback = function()
-		vim.opt.relativenumber = true
-	end,
-})
-
--- USER COMMAND
-cmd("Rmtrails", function()
-	MiniTrailspace.trim()
-end, {})
-
-cmd("Rmlasttrails", function()
-	MiniTrailspace.trim_last_lines()
-end, {})
-
 key("n", "<C-l>", ":noh<CR>", opts)
+key("i", "<C-l>", "<Esc>la", opts)
 key("n", "<CR>", "o<Esc>", opts)
+key("i", "<C-CR>", "O", opts)
+
 key("n", "<leader>pc", function()
 	local source = vim.fn.input("Enter source path", vim.fn.getcwd() .. "/", "dir")
 	local build = vim.fn.input("Enter build path", vim.fn.getcwd() .. "/", "dir")
@@ -50,7 +23,7 @@ key("n", "<leader>pc", function()
 		build
 	)
 	os.execute(command)
-end)
+end, opts)
 
 key("n", "<leader>gcc", function()
 	local full_path = vim.api.nvim_buf_get_name(0)
@@ -66,7 +39,7 @@ key("n", "<leader>gcc", function()
 		build
 	)
 	os.execute(command)
-end)
+end, opts)
 
 key("n", "<leader>R", function()
 	local path = vim.fn.input("Enter the exe file path", vim.fn.getcwd() .. "/", "file")
@@ -80,4 +53,4 @@ key("n", "<leader>R", function()
 		path
 	)
 	os.execute(command)
-end)
+end, opts)

@@ -1,13 +1,14 @@
 vim.g.mapleader = " "
 
+vim.loader.enable()
 vim.opt.showmatch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.ttyfast = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.relativenumber = true
-vim.o.linebreak = true
-vim.o.breakindent = true
+vim.opt.linebreak = true
+vim.opt.breakindent = true
 vim.opt.termguicolors = true
 
 -- Bootstrap lazy.nvim
@@ -26,6 +27,7 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Setup plugins
 require("lazy").setup({
+	defaults = { lazy = true }, -- EVERYTHING lazy by default
 	-- config file are in the plugin folder.
 	require("plugins.bg"),
 	require("plugins.base16-nvim"),
@@ -33,7 +35,7 @@ require("lazy").setup({
 	require("plugins.ensure"),
 	require("plugins.nvim-treesitter"),
 	require("plugins.mason"),
-	require("plugins.linter"),
+	require("plugins.nvim-lint"),
 	require("plugins.blink"),
 	require("plugins.nvim-lspconfig"),
 	require("plugins.nvim-dap"),
@@ -43,7 +45,6 @@ require("lazy").setup({
 	require("plugins.multiplecursor"),
 	require("plugins.indent-blankline"),
 	require("plugins.lualine"),
-	require("plugins.tabout"),
 	require("plugins.mini"),
 	require("plugins.conform"),
 	require("plugins.flash"),
@@ -54,5 +55,7 @@ require("lazy").setup({
 })
 
 -- additional imports
-require("keymaps.keymap")
-dofile(vim.fn.stdpath("config") .. "/lua/plugins/theme.lua")
+require("config.themes")
+require("config.keymaps")
+require("config.commands")
+require("config.macros")
