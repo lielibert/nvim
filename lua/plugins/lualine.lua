@@ -1,6 +1,7 @@
 return {
 	"nvim-lualine/lualine.nvim",
-	event = "VimEnter",
+	event = { "InsertEnter", "BufReadPost", "BufNewFile" },
+	priority = 2006,
 	dependencies = {
 		{ "nvim-tree/nvim-web-devicons" },
 	},

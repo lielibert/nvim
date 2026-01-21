@@ -1,12 +1,13 @@
 return {
 	{
 		"folke/flash.nvim",
-		event = "VeryLazy",
+		event = "InsertEnter",
+		priority = 2005,
 		---@type Flash.Config
 		opts = {},
 		keys = {
 			{
-				"s",
+				"D",
 				mode = { "n", "x", "o" },
 				function()
 					require("flash").jump()

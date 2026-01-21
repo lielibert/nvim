@@ -1,6 +1,7 @@
 return {
 	{
 		"chrisgrieser/nvim-scissors",
+		event = { "BufReadPost", "BufNewFile" },
 		opts = {
 			snippetDir = vim.fn.stdpath("config") .. "/snippets",
 		},
@@ -34,7 +35,7 @@ return {
 				-- list of strings, which will then be passed to `vim.system()`.
 				-- TIP: `jq` is already pre-installed on newer versions of macOS.
 				---@type "yq"|"jq"|"none"|string[]
-				jsonFormatter = "none",
+				jsonFormatter = "jq",
 
 				backdrop = {
 					enabled = true,

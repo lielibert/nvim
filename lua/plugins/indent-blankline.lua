@@ -2,6 +2,8 @@ return {
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
+		event = "InsertEnter",
+		priority = 2007,
 		opts = {
 			indent = { char = "│", tab_char = "│" },
 			whitespace = { remove_blankline_trail = false },

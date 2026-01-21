@@ -1,13 +1,16 @@
 return {
+
 	{
 		"noirbizarre/ensure.nvim",
 		opts = {
-			-- LSP servers
+
 			lsp = {
+
 				enable = {
 					"lua_ls",
 					"vimls",
 					"bashls",
+					"texlab",
 					"clangd",
 					"neocmake",
 					"rust_analyzer",
@@ -18,9 +21,11 @@ return {
 					"emmet_ls",
 					"eslint",
 					"vue_ls",
+					-- quickshell
+					"qmlls",
 				},
 			},
-			-- Formatters (by filetype)
+
 			formatters = {
 				lua = "stylua",
 				sh = "beautysh",
@@ -34,8 +39,10 @@ return {
 				javascript = "prettierd",
 				typescript = "prettierd",
 				vue = "prettierd",
+				latex = "latexindent",
+				json = "jq",
 			},
-			-- Linters (by filetype)
+
 			linters = {
 				-- lua = "luacheck",
 				sh = "shellcheck",
@@ -49,9 +56,8 @@ return {
 				javascript = "eslint_d",
 				typescript = "eslint_d",
 			},
-			-- Tree-sitter parsers (array format for specific parsers)
-			parsers = { "lua", "python", "javascript", "typescript" },
-			-- Additional Mason packages
+
+			parsers = { "c", "cpp", "rust", "go", "lua", "python", "javascript", "typescript" },
 			packages = { "codespell" },
 		},
 	},

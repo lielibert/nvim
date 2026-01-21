@@ -1,11 +1,8 @@
 return {
-
 	"folke/snacks.nvim",
 	priority = 1000,
 	lazy = false,
-
 	opts = {
-
 		win = { enabled = true, backdrop = false },
 		terminal = { enabled = true },
 		animate = { enabled = true },
@@ -33,9 +30,7 @@ return {
 		gitbrowse = { enabled = true },
 		rename = { enabled = true },
 	},
-
 	keys = {
-
 		-- Top Pickers & Explorer
 		{
 			"<leader><space>",
@@ -44,7 +39,6 @@ return {
 			end,
 			desc = "Smart Find Files",
 		},
-
 		{
 			"<leader>/",
 			function()
@@ -73,7 +67,6 @@ return {
 			end,
 			desc = "File Explorer",
 		},
-
 		-- find
 		{
 			"<leader>fb",
@@ -117,7 +110,6 @@ return {
 			end,
 			desc = "Recent",
 		},
-
 		-- git
 		{
 			"<leader>gb",
@@ -168,7 +160,6 @@ return {
 			end,
 			desc = "Git Log File",
 		},
-
 		-- Grep
 		{
 			"<leader>sb",
@@ -199,7 +190,6 @@ return {
 			desc = "Visual selection or word",
 			mode = { "n", "x" },
 		},
-
 		-- search
 		{
 			'<leader>s"',
@@ -348,7 +338,6 @@ return {
 			end,
 			desc = "Colorschemes",
 		},
-
 		-- LSP
 		{
 			"gd",
@@ -400,7 +389,6 @@ return {
 			end,
 			desc = "LSP Workspace Symbols",
 		},
-
 		-- Other
 		{
 			"<leader>z",
@@ -487,22 +475,22 @@ return {
 			end,
 			desc = "which_key_ignore",
 		},
-		{
-			"]]",
-			function()
-				Snacks.words.jump(vim.v.count1)
-			end,
-			desc = "Next Reference",
-			mode = { "n", "t" },
-		},
-		{
-			"[[",
-			function()
-				Snacks.words.jump(-vim.v.count1)
-			end,
-			desc = "Prev Reference",
-			mode = { "n", "t" },
-		},
+		-- {
+		-- 	"]]",
+		-- 	function()
+		-- 		Snacks.words.jump(vim.v.count1)
+		-- 	end,
+		-- 	desc = "Next Reference",
+		-- 	mode = { "n", "t" },
+		-- },
+		-- {
+		-- 	"[[",
+		-- 	function()
+		-- 		Snacks.words.jump(-vim.v.count1)
+		-- 	end,
+		-- 	desc = "Prev Reference",
+		-- 	mode = { "n", "t" },
+		-- },
 	},
 	init = function()
 		vim.api.nvim_create_autocmd("User", {
