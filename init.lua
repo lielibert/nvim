@@ -30,7 +30,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	defaults = { lazy = true }, -- EVERYTHING lazy by default
 	-- config file are in the plugin folder.
-	require("plugins.bg"),
 	require("plugins.base16-nvim"),
 	require("plugins.snacks"),
 	require("plugins.ensure"),
