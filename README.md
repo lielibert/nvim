@@ -5,10 +5,9 @@ Best for C/CPP & rust & python.</br>
 This is some-what lightweight ... also 😅.
 
 > [!IMPORTANT]
-> Dependencies <br>
-> git <br>
-> rust nightly
-
+> **Dependencies** <br>
+> + git <br>
+> + rust nightly
 
 ## ✨ Configure and Setup
 
@@ -46,7 +45,14 @@ cd %LOCALAPPDATA% && git clone https://github.com/lielibert/nvim.git
 | **Diagnostics** | diagflow |
 | **Debugging** | nvim-dap + U.I. |
 
-+ Also contain features like **multicursor, mini.nvim, rainbow brackets indent**
++ Also contain features like 
+++ treesitter + textobject 
+++ lualine
+++ nvim-scissor
+++ multicursor
+++ mini.nvim
+++ rainbow brackets indent
++ Enhance UI using noice.nvim and snacks.nvim
 + Also contain Plugin for AI (copilot), can be enable in init.lua file
 + Use browser for AI chat, nothing is perfect.
 
