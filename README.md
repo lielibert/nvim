@@ -5,18 +5,25 @@ Best for C/CPP & rust & python.</br>
 This is some-what lightweight ... also 😅.
 
 > [!IMPORTANT]
+
 > Dependencies
+
 > git 
+
 > rust nightly
+
 
 ## ✨ Configure and Setup
 
-```Linux
+* For Linux
+
+```
 cd ~/.config && git clone https://github.com/lielibert/nvim.git
 
 ```
+* For Windows
 
-```Windows
+```
 cd %LOCALAPPDATA% && git clone https://github.com/lielibert/nvim.git
 
 ```
@@ -49,6 +56,9 @@ cd %LOCALAPPDATA% && git clone https://github.com/lielibert/nvim.git
 + Use browser for AI chat, nothing is perfect.
 
 > [!NOTE]
+
 > Install clipboard and clipboard manager
+
 > use ocs52 in nvim to copy text from remote machine to local machine
+
 > This works in all platform
