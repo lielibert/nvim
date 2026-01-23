@@ -4,41 +4,51 @@ This is a **ready to go** nvim lua  configuration using **Lazy Plugin Manager** 
 Best for C/CPP & rust & python.</br>
 This is some-what lightweight ... also 😅.
 
-## ✨ Install and setup
+> [!IMPORTANT]
+> Dependencies
+> git 
+> rust nightly
+
+## ✨ Configure and Setup
+
+```Linux
+cd ~/.config && git clone https://github.com/lielibert/nvim.git
 
 ```
-cd ~/.config && git clone https://github.com/lielibert/nvim.git
+
+```Windows
+cd %LOCALAPPDATA% && git clone https://github.com/lielibert/nvim.git
+
 ```
 
 ## 📁 Folder Structure
 
 ```
-.
 ├── LICENSE
 ├── README.md
 ├── init.lua
 ├── lazy-lock.json
-└── lua
-    ├── keymaps
-    └── plugins
+├── lua
+│   ├── config
+│   └── plugins
+└── snippets
 ```
 
 ## 🔥Plugins
 
-
 | Feature | Plugins |
 |---------|---------|
-| **Theme**   | base-16-color + matugen support |
-|  **lsp**  | blink.cmp, installed vai mason |
-| **Diagnostics** | conform + nvim-lint, installed vai mason |
+| **Theme** | base-16-color + transparent support |
+| **lsp** | installed vai mason handled by ensure.nvim |
+| **Complition** | blink.cmp |
+| **Diagnostics** | diagflow |
 | **Debugging** | nvim-dap + U.I. |
 
-+ Also contain features like **multicursor, comment, tabout, rainbow brackets indent**
-+ Also contain Plugin for AI , can enable it in init.lua file
-+ Use browser for AI chat , nothing is perfect.
++ Also contain features like **multicursor, mini.nvim, rainbow brackets indent**
++ Also contain Plugin for AI (copilot), can be enable in init.lua file
++ Use browser for AI chat, nothing is perfect.
 
 > [!NOTE]
-> Install a clipboard like xclip for x11 or wl-clipboard for wayland and a clipboard manager
-> Can also use kitty terminal or something like that which allow ssh copying
-> This works best in all platfor 
-
+> Install clipboard and clipboard manager
+> use ocs52 in nvim to copy text from remote machine to local machine
+> This works in all platform
