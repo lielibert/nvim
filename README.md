@@ -1,8 +1,8 @@
 # **Introduction**
 
-This is a **ready to go** nvim lua  configuration using **Lazy Plugin Manager** that you can clone in your **.config/** folder to use.</br>
+This is a **ready to go** nvim lua configuration using **Lazy Plugin Manager** that you can clone to use.</br>
 Best for C/CPP & rust & python.</br>
-This is some-what lightweight ... also 😅.
+This is some-what lightweight... also 😅.
 
 > [!IMPORTANT]
 > **Dependencies** <br>
@@ -39,8 +39,8 @@ cd %LOCALAPPDATA% && git clone https://github.com/lielibert/nvim.git
 
 | Feature | Plugins |
 |---------|---------|
-| **Theme** | base-16-color + transparent support |
-| **lsp** | installed vai mason handled by ensure.nvim |
+| **Theme** | base-16-color + transparent |
+| **lsp** | installed vai mason.nvim handled by ensure.nvim |
 | **Complition** | blink.cmp |
 | **Diagnostics** | diagflow |
 | **Debugging** | nvim-dap + U.I. |
@@ -51,12 +51,12 @@ cd %LOCALAPPDATA% && git clone https://github.com/lielibert/nvim.git
     + nvim-scissor
     + multicursor
     + mini.nvim
-+ rainbow brackets indent
+    + rainbow brackets indent
 + Enhance UI using noice.nvim and snacks.nvim
 + Also contain Plugin for AI (copilot), can be enable in init.lua file
 + Use browser for AI chat, nothing is perfect.
 
 > [!NOTE]
 > Install clipboard and clipboard manager <br>
-> use ocs52 in nvim to copy text from remote machine to local machine <br>
+> Use ocs52 in nvim to copy text from remote machine to local machine <br>
 > This works in all platform
