@@ -46,12 +46,12 @@ cd %LOCALAPPDATA% && git clone https://github.com/lielibert/nvim.git
 | **Debugging** | nvim-dap + U.I. |
 
 + Also contain features like 
-++ treesitter + textobject 
-++ lualine
-++ nvim-scissor
-++ multicursor
-++ mini.nvim
-++ rainbow brackets indent
+    + treesitter, textobject 
+    + lualine
+    + nvim-scissor
+    + multicursor
+    + mini.nvim
++ rainbow brackets indent
 + Enhance UI using noice.nvim and snacks.nvim
 + Also contain Plugin for AI (copilot), can be enable in init.lua file
 + Use browser for AI chat, nothing is perfect.
