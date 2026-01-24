@@ -11,16 +11,6 @@ return {
 		build = "cargo build --release",
 		opts = {
 			signature = { enabled = false },
-			-- sources = {
-			-- 	providers = {
-			-- 		snippets = {
-			-- 			opts = {
-			-- 				search_path = vim.fn.stdpath("config") .. "/snippets/",
-			-- 			},
-			-- 		},
-			-- 	},
-			-- },
-
 			keymap = {
 				preset = "default",
 

@@ -48,6 +48,7 @@ require("lazy").setup({
 	require("plugins.mini"),
 	require("plugins.conform"),
 	require("plugins.flash"),
+	-- require("plugins.dropbar"),
 	require("plugins.nvim-colorizer"),
 	require("plugins.nvim-toggle"),
 	require("plugins.nvim-transparent"),
