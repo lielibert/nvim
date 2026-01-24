@@ -43,15 +43,13 @@ require("lazy").setup({
 	require("plugins.diagflow"),
 	require("plugins.noice"),
 	require("plugins.multiplecursor"),
-	require("plugins.indent-blankline"),
 	require("plugins.lualine"),
 	require("plugins.mini"),
 	require("plugins.conform"),
-	require("plugins.flash"),
-	-- require("plugins.dropbar"),
 	require("plugins.nvim-colorizer"),
 	require("plugins.nvim-toggle"),
 	require("plugins.nvim-transparent"),
+	require("plugins.neogen"),
 	-- require("plugins.which-key"),
 	-- require("plugins.copilot"), -- load when you want to use copilot
 })
