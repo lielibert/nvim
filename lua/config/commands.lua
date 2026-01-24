@@ -15,32 +15,54 @@ autocmd("InsertLeave", {
 	end,
 })
 
--- Lua snippet for bg.nvim functionality
-local api = vim.api
-
-api.nvim_create_autocmd("UIEnter", {
-	group = api.nvim_create_augroup("set_terminal_bg", {}),
-	callback = function()
-		local bg = api.nvim_get_hl_by_name("Normal", true)["background"]
-		if not bg then
-			return
-		end
-		local fmt = string.format
-
-		if os.getenv("TMUX") then
-			-- Send escape sequence to tmux to set background color
-			bg = fmt("\x1bPtmux;\x1b\x1b]11;#%06x\x07\x1b\\", bg)
-		else
-			-- Send escape sequence directly to terminal
-			bg = fmt("\x1b]11;#%06x\x07", bg)
-		end
-
-		os.execute(bg)
-		return true
-	end,
-})
-
 -- USER COMMAND
+cmd("CCPP", function()
+	local source = vim.fn.input("Enter source path", vim.fn.getcwd() .. "/", "dir")
+	local build = vim.fn.input("Enter build path", vim.fn.getcwd() .. "/", "dir")
+
+	if source == "" or build == "" then
+		return
+	end
+	local command = string.format(
+		[[
+	kitty bash -c "cmake -S %s -B %s; echo 'Config Completed, press q to exit'; read -n 1 -s q;" /dev/null
+	]],
+		source,
+		build
+	)
+	os.execute(command)
+end, {})
+
+cmd("BCPP", function()
+	local full_path = vim.api.nvim_buf_get_name(0)
+	local build = vim.fn.input("Enter build path", vim.fn.getcwd() .. "/", "file")
+	if full_path == "" or build == "" then
+		return
+	end
+	local command = string.format(
+		[[
+	kitty bash -c "g++ %s -o %s; echo 'build Completed, press q to exit'; read -n 1 -s q;" &> /dev/null
+	]],
+		full_path,
+		build
+	)
+	os.execute(command)
+end, {})
+
+cmd("RCPP", function()
+	local path = vim.fn.input("Enter the exe file path", vim.fn.getcwd() .. "/", "file")
+	if path == "" then
+		return
+	end
+	local command = string.format(
+		[[
+	kitty bash -c "%s; echo 'Completed, press q to exit'; read -n 1 -s q;" &> /dev/null
+	]],
+		path
+	)
+	os.execute(command)
+end, {})
+
 cmd("RT", function()
 	MiniTrailspace.trim()
 end, {})

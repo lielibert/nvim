@@ -15,9 +15,14 @@ return {
 
 			require("mini.bracketed").setup()
 			require("mini.trailspace").setup()
+			require("mini.jump").setup()
+			require("mini.jump2d").setup({
+				mappings = {
+					start_jumping = "\\",
+				},
+			})
 
-			require("mini.colors").setup()
-			require("mini.icons").setup()
+			-- require("mini.folds").setup()
 		end,
 	},
 }
