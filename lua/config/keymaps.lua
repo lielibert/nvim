@@ -4,6 +4,7 @@ key = vim.keymap.set
 opts = { noremap = true, silent = true }
 
 key("n", "<C-l>", ":noh<CR>", opts)
+key("n", "<leader>e", ":lua MiniFiles.open()<CR>", opts)
 key("i", "<C-l>", "<Esc>la", opts)
 key("n", "<CR>", "o<Esc>", opts)
 key("i", "<C-CR>", "O", opts)

@@ -3,6 +3,7 @@ return {
 	event = { "InsertEnter", "BufReadPost", "BufNewFile" },
 	priority = 2006,
 	dependencies = {
+		{ "yavorski/lualine-macro-recording.nvim" },
 		{ "nvim-tree/nvim-web-devicons" },
 	},
 	config = function()
@@ -41,10 +42,7 @@ return {
 			},
 			sections = {
 				lualine_a = {
-					{
-						require("noice").api.statusline.mode.get,
-						cond = require("noice").api.statusline.mode.has,
-					},
+					{ "macro_recording", "&s" },
 					"mode",
 				},
 				lualine_b = {

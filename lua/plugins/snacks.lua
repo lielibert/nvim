@@ -14,7 +14,7 @@ return {
 		dashboard = { enabled = true },
 		notify = { enabled = true },
 		notifier = { enabled = true, timeout = 3000 },
-		explorer = { enabled = true },
+		explorer = { enabled = false },
 		picker = { enabled = true },
 		dim = { enabled = true },
 		indent = { enabled = true },
@@ -60,13 +60,13 @@ return {
 			end,
 			desc = "Notification History",
 		},
-		{
-			"<leader>e",
-			function()
-				Snacks.explorer()
-			end,
-			desc = "File Explorer",
-		},
+		-- {
+		-- 	"<leader>e",
+		-- 	function()
+		-- 		Snacks.explorer()
+		-- 	end,
+		-- 	desc = "File Explorer",
+		-- },
 		-- find
 		{
 			"<leader>fb",
