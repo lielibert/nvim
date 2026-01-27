@@ -11,29 +11,19 @@ return {
 		build = "cargo build --release",
 		opts = {
 			signature = { enabled = false },
-			keymap = {
-				preset = "default",
-
-				["<CR>"] = { "accept", "fallback" },
-			},
-			appearance = {
-				nerd_font_variant = "mono",
-			},
+			keymap = { preset = "default", ["<CR>"] = { "accept", "fallback" } },
+			appearance = { nerd_font_variant = "mono" },
 
 			completion = {
 				documentation = { auto_show = false },
 				menu = {
 					border = "single",
 					scrollbar = false,
-					draw = {
-						treesitter = { "lsp", "snippets", "path", "buffer" },
-					},
+					draw = { treesitter = { "lsp", "snippets", "path", "buffer" } },
 				},
 			},
 
-			sources = {
-				default = { "snippets", "lsp", "path", "buffer" },
-			},
+			sources = { default = { "snippets", "lsp", "path", "buffer" } },
 
 			fuzzy = { implementation = "prefer_rust_with_warning" },
 		},
