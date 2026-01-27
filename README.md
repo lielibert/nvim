@@ -51,7 +51,6 @@ cd %LOCALAPPDATA% && git clone https://github.com/lielibert/nvim.git
     + nvim-scissor
     + multicursor
     + mini.nvim
-    + rainbow brackets indent
 + Enhance UI using noice.nvim and snacks.nvim
 + Also contain Plugin for AI (copilot), can be enable in init.lua file
 + Use browser for AI chat, nothing is perfect.
