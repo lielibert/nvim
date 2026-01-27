@@ -1,16 +1,20 @@
-vim.g.mapleader = " "
+vim.g.mapleader = " " -- Set mapleader
 
-vim.loader.enable()
-vim.opt.showmatch = true
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-vim.opt.ttyfast = true
-vim.opt.clipboard = "unnamedplus"
-vim.opt.relativenumber = true
-vim.opt.linebreak = true
-vim.opt.breakindent = true
-vim.opt.termguicolors = true
-vim.opt.winbar = " "
+vim.loader.enable() -- Speeds up require() by caching compiled Lua bytecode
+vim.opt.termguicolors = true -- True terminal colors
+vim.opt.clipboard = "unnamedplus" -- For clipboard
+vim.opt.relativenumber = true -- For relativenumber
+vim.opt.showmatch = false -- Briefly jumps to the matching bracket when you type ) ] or }
+vim.opt.ignorecase = true -- Ignore the case when searching
+vim.opt.smartcase = true -- search become case sensitive when using capital letters
+vim.opt.ttyfast = true -- It tells that the terminal is fast, so it can optimize screen redraws.
+vim.opt.wrap = true -- Wraping for long text
+vim.opt.linebreak = true -- Wrap lines at word boundaries instead of cutting words mid-way
+vim.opt.showbreak = "↳ " -- Prefix for wrapped lines
+vim.opt.breakindent = true -- Makes wrapped lines look neatly indented
+
+-- Comment out the winbar section in lualine for this to work
+-- vim.opt.winbar = " " -- for adding some space at the top
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -32,24 +36,25 @@ require("lazy").setup({
 	-- config file are in the plugin folder.
 	require("plugins.base16-nvim"),
 	require("plugins.snacks"),
-	require("plugins.ensure"),
+	require("plugins.noice"),
 	require("plugins.nvim-treesitter"),
 	require("plugins.mason"),
-	require("plugins.nvim-lint"),
-	require("plugins.blink"),
+	require("plugins.ensure"),
 	require("plugins.nvim-lspconfig"),
+	require("plugins.blink"),
+	require("plugins.conform"),
+	require("plugins.nvim-lint"),
 	require("plugins.nvim-dap"),
-	require("plugins.nvim-scissors"),
+	require("plugins.mini"),
 	require("plugins.diagflow"),
-	require("plugins.noice"),
 	require("plugins.multiplecursor"),
 	require("plugins.lualine"),
-	require("plugins.mini"),
-	require("plugins.conform"),
+	require("plugins.nvim-scissors"),
 	require("plugins.nvim-colorizer"),
 	require("plugins.nvim-toggle"),
-	require("plugins.nvim-transparent"),
 	require("plugins.neogen"),
+	require("plugins.rainbow-delimiters"),
+	require("plugins.nvim-transparent"),
 	-- require("plugins.which-key"),
 	-- require("plugins.copilot"), -- load when you want to use copilot
 })
@@ -58,4 +63,5 @@ require("lazy").setup({
 require("config.themes")
 require("config.keymaps")
 require("config.commands")
+
 require("config.macros")

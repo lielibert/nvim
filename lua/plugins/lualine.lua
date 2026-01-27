@@ -49,11 +49,9 @@ return {
 					"branch",
 					"diff",
 					"diagnostics",
-					function()
-						return os.date("%a %H:%M")
-					end,
 				},
-				lualine_c = { "filename" },
+				-- lualine_c = { "filename" },
+				lualine_c = {},
 				lualine_x = { "encoding", "fileformat", "filetype" },
 				lualine_y = { "progress" },
 				lualine_z = { "location" },
@@ -67,7 +65,32 @@ return {
 				lualine_z = {},
 			},
 			tabline = {},
-			winbar = {},
+			winbar = {
+				lualine_c = {
+					{
+						"filename",
+						path = 1, -- 2 for absolute path
+					},
+				},
+				lualine_x = {
+					function()
+						return os.date("%a %H:%M")
+					end,
+				},
+
+				-- For Bright style
+				-- lualine_a = {
+				-- 	{
+				-- 		"filename",
+				-- 		path = 1, -- 2 for absolute path
+				-- 	},
+				-- },
+				-- lualine_z = {
+				-- 	function()
+				-- 		return os.date("%a %H:%M")
+				-- 	end,
+				-- },
+			},
 			inactive_winbar = {},
 			extensions = {},
 		})
