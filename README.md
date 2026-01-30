@@ -1,14 +1,15 @@
 # **Introduction**
 
-This is a **ready to go** nvim lua configuration using **Lazy Plugin Manager** that you can clone to use.</br>
+<p align="center">
+  <img src="./preview/1.jpg" width="45%" />
+  <img src="./preview/2.jpg" width="45%" />
+</p>
+
+<hr>
+
+A **ready to go modern** nvim lua configuration using **Lazy Plugin Manager**.</br>
 Best for C/CPP & rust & python.</br>
 This is some-what lightweight... also 😅.
-
-<hr>
-
-![Review](./preview/1.jpg)
-
-<hr>
 
 > [!IMPORTANT]
 > **Dependencies** <br>
