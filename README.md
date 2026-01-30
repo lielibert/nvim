@@ -1,9 +1,7 @@
 # **Introduction**
 
-<p align="center">
-  <img src="./preview/1.jpg" width="45%" />
-  <img src="./preview/2.jpg" width="45%" />
-</p>
+<img src="./preview/1.jpg" />
+<img src="./preview/2.jpg" />
 
 <hr>
 
