@@ -48,7 +48,7 @@ return {
 			linters = {
 				-- lua = "luacheck",
 				sh = "shellcheck",
-				c = "cpplint",
+				c = "clang-tidy",
 				cpp = "cpplint",
 				cmake = "cmakelang",
 				rust = "bacon",

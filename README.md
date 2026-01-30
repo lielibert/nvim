@@ -4,6 +4,12 @@ This is a **ready to go** nvim lua configuration using **Lazy Plugin Manager** t
 Best for C/CPP & rust & python.</br>
 This is some-what lightweight... also 😅.
 
+<hr>
+
+![Review](./preview/1.jpg)
+
+<hr>
+
 > [!IMPORTANT]
 > **Dependencies** <br>
 > + git <br>
