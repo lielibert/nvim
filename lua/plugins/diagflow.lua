@@ -19,7 +19,7 @@ return {
 					return string.format("%s", diagnostic.message)
 				end,
 				gap_size = 0,
-				scope = "cursor", -- 'cursor', 'line' this changes the scope, so instead of showing errors under the cursor, it shows errors on the entire line.
+				scope = "line", -- 'cursor', 'line' this changes the scope, so instead of showing errors under the cursor, it shows errors on the entire line.
 				padding_top = -1,
 				padding_right = 0,
 				text_align = "right", -- 'left', 'right'

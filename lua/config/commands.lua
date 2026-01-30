@@ -25,7 +25,7 @@ cmd("CCPP", function()
 	end
 	local command = string.format(
 		[[
-	kitty bash -c "cmake -S %s -B %s; echo 'Config Completed, press q to exit'; read -n 1 -s q;" /dev/null
+	kitty bash -c "cmake -S %s -B %s; printf '\nConfig Completed, press q to exit'; read -n 1 -s q;" /dev/null
 	]],
 		source,
 		build
@@ -41,7 +41,7 @@ cmd("BCPP", function()
 	end
 	local command = string.format(
 		[[
-	kitty bash -c "g++ %s -o %s; echo 'build Completed, press q to exit'; read -n 1 -s q;" &> /dev/null
+	kitty bash -c "g++ %s -o %s; printf '\nbuild Completed, press q to exit'; read -n 1 -s q;" &> /dev/null
 	]],
 		full_path,
 		build
@@ -56,7 +56,7 @@ cmd("RCPP", function()
 	end
 	local command = string.format(
 		[[
-	kitty bash -c "%s; echo 'Completed, press q to exit'; read -n 1 -s q;" &> /dev/null
+	kitty bash -c "%s; printf '\nCompleted, press q to exit'; read -n 1 -s q;" &> /dev/null
 	]],
 		path
 	)
