@@ -65,5 +65,4 @@ require("lazy").setup({
 require("config.themes")
 require("config.keymaps")
 require("config.commands")
-
 require("config.macros")
