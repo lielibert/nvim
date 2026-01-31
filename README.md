@@ -10,10 +10,12 @@ Best for C/CPP & rust & python.</br>
 This is some-what lightweight... also 😅.
 
 > [!IMPORTANT]
-> **Dependencies** <br>
-> + git <br>
-> + rust nightly
-> + npm
+> **Dependencies**
+> + git 
+> + curl
+> + fzf
+> + rust nightly (if building blink.cmp)
+> + nodejs npm
 > + ripgrep
 
 ## ✨ Configure and Setup
