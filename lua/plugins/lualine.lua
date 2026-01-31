@@ -3,7 +3,6 @@ return {
 	event = { "InsertEnter", "BufReadPost", "BufNewFile" },
 	priority = 2006,
 	dependencies = {
-		{ "yavorski/lualine-macro-recording.nvim" },
 		{ "nvim-tree/nvim-web-devicons" },
 	},
 	config = function()
@@ -42,7 +41,16 @@ return {
 			},
 			sections = {
 				lualine_a = {
-					{ "macro_recording", "&s" },
+					{
+						function()
+							local reg = vim.fn.reg_recording()
+							if reg == "" then
+								return ""
+							else
+								return "Recording @" .. reg
+							end
+						end,
+					},
 					"mode",
 				},
 				lualine_b = {

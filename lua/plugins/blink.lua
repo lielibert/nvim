@@ -3,12 +3,14 @@ return {
 		"saghen/blink.cmp",
 		event = "InsertEnter",
 		priority = 2008,
+		version = "1.*",
 		dependencies = {
 			{ "rafamadriz/friendly-snippets" },
 			{ "L3MON4D3/LuaSnip", build = "make install_jsregexp" }, -- Snippet engine
 		},
 
-		build = "cargo build --release",
+		-- build = "cargo build --release",
+
 		opts = {
 			signature = { enabled = false },
 			keymap = { preset = "default", ["<CR>"] = { "accept", "fallback" } },

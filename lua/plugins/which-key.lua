@@ -1,14 +1,15 @@
 return {
 
 	"folke/which-key.nvim",
-	event = "VeryLazy",
+	event = "InsertEnter",
 	opts = {
 		triggers = {
-			{ "<leader>", mode = { "n", "v" } },
+			{ "<leader>", mode = { "v" } },
 		},
 	},
 
 	keys = {
+
 		{
 			"<leader>?",
 			function()

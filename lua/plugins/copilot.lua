@@ -11,16 +11,14 @@ return {
 					enabled = true,
 					auto_trigger = true,
 					keymap = {
-						accept = "<C-J>",
-						next = "<C-K>",
-						prev = "<C-H>",
-						dismiss = "<C-L>",
+						accept = "<Tab>",
+						next = "<C-n>",
+						prev = "<C-p>",
+						dismiss = "<C-Space>",
 					},
 				},
 				panel = { enabled = true },
 			})
 		end,
-	}
-
+	},
 }
-
