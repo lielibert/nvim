@@ -52,10 +52,12 @@ require("lazy").setup({
 	require("plugins.nvim-scissors"),
 	require("plugins.nvim-colorizer"),
 	require("plugins.nvim-toggle"),
+	require("plugins.dial"),
+	require("plugins.plenary"),
 	require("plugins.neogen"),
 	require("plugins.rainbow-delimiters"),
 	require("plugins.nvim-transparent"),
-	-- require("plugins.which-key"),
+	require("plugins.which-key"),
 	-- require("plugins.copilot"), -- load when you want to use copilot
 })
 
