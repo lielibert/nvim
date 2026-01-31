@@ -13,10 +13,9 @@ This is some-what lightweight... also 😅.
 > **Dependencies**
 > + git 
 > + curl
-> + fzf
-> + rust nightly (if building blink.cmp)
-> + nodejs npm
 > + ripgrep
+> + nodejs npm
+> + rust nightly (if building blink.cmp)
 
 ## ✨ Configure and Setup
 
