@@ -10,8 +10,8 @@ return {
 			require("scissors").setup({
 				snippetDir = vim.fn.stdpath("config") .. "/snippets",
 				editSnippetPopup = {
-					height = 0.4, -- relative to the window, between 0-1
-					width = 0.6,
+					height = 0.6, -- relative to the window, between 0-1
+					width = 0.8,
 					-- border = getBorder(), -- `vim.o.winborder` on nvim 0.11, otherwise "rounded"
 					keymaps = {
 						-- if not mentioned otherwise, the keymaps apply to normal mode

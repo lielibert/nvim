@@ -10,7 +10,7 @@ vim.opt.smartcase = true -- search become case sensitive when using capital lett
 vim.opt.ttyfast = true -- It tells that the terminal is fast, so it can optimize screen redraws.
 vim.opt.wrap = true -- Wraping for long text
 vim.opt.linebreak = true -- Wrap lines at word boundaries instead of cutting words mid-way
-vim.opt.showbreak = "↳ " -- Prefix for wrapped lines
+vim.opt.showbreak = "↳" -- Prefix for wrapped lines
 vim.opt.breakindent = true -- Makes wrapped lines look neatly indented
 
 -- Comment out the winbar section in lualine for this to work
@@ -59,6 +59,8 @@ require("lazy").setup({
 	require("plugins.nvim-transparent"),
 	require("plugins.which-key"),
 	-- require("plugins.copilot"), -- load when you want to use copilot
+
+	require("plugins.custom"), -- bring your plugins
 })
 
 -- additional imports

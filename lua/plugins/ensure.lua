@@ -2,6 +2,7 @@ return {
 
 	{
 		"noirbizarre/ensure.nvim",
+		event = "InsertEnter",
 		opts = {
 
 			lsp = {

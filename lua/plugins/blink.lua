@@ -9,7 +9,7 @@ return {
 			{ "L3MON4D3/LuaSnip", build = "make install_jsregexp" }, -- Snippet engine
 		},
 
-		-- build = "cargo build --release",
+		build = "cargo build --release",
 
 		opts = {
 			signature = { enabled = false },
