@@ -6,7 +6,7 @@ return {
 		event = { "BufReadPost", "BufNewFile" },
 		build = ":TSUpdate",
 		config = function()
-			require("nvim-treesitter").install({ "rust", "javascript", "cpp" })
+			require("nvim-treesitter").install({ "rust", "javascript", "cpp", "regex" })
 			vim.api.nvim_create_autocmd("FileType", {
 				pattern = { "<filetype>" },
 				callback = function()
@@ -143,10 +143,10 @@ return {
 
 			-- Go to either the start or the end, whichever is closer.
 			-- Use if you want more granular movements
-			vim.keymap.set({ "n", "x", "o" }, "]d", function()
+			vim.keymap.set({ "n", "x", "o" }, "]gd", function()
 				require("nvim-treesitter-textobjects.move").goto_next("@conditional.outer", "textobjects")
 			end)
-			vim.keymap.set({ "n", "x", "o" }, "[d", function()
+			vim.keymap.set({ "n", "x", "o" }, "[gd", function()
 				require("nvim-treesitter-textobjects.move").goto_previous("@conditional.outer", "textobjects")
 			end)
 		end,

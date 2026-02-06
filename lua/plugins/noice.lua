@@ -29,6 +29,10 @@ return {
 					lsp_doc_border = true, -- add a border to hover docs and signature help
 				},
 			})
+
+			vim.keymap.set({ "i", "n" }, "<C-k>", function()
+				require("noice.lsp").signature()
+			end, { noremap = true, silent = true, desc = "Signature Help" })
 		end,
 	},
 }

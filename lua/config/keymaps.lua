@@ -1,27 +1,20 @@
 -- Change the leaderkey in the init.lua file
 
-key = vim.keymap.set
-opts = { noremap = true, silent = true }
+local key = vim.keymap.set
 
-key("n", "<C-l>", ":noh<CR>", opts)
-key("i", "<C-l>", "<Esc>la", opts)
-key("n", "<CR>", "o<Esc>", opts)
-key("n", "<C-;>", "$a;<Esc>", opts)
-key("i", "<C-;>", "$;", opts)
-key("n", "<leader>t", ":TransparentToggle<CR>", opts)
+key("n", "<C-l>", ":noh<CR>", { noremap = true, silent = true, desc = "clear hl" })
+key("i", "<C-l>", "<Esc>la", { noremap = true, silent = true, desc = "next character" })
+key("n", "<CR>", "o<Esc>", { noremap = true, silent = true, desc = "create line" })
+key("n", "<C-;>", "$a;<Esc>", { noremap = true, silent = true, desc = "add ; to the end" })
+key("i", "<C-;>", "$;", { noremap = true, silent = true, desc = "add ; to the end" })
+key({ "n", "i" }, "<C-'>", "<Esc>:s/;$//<CR>", { noremap = true, silent = true, desc = "remove ; from the end" })
+key(
+	"n",
+	"<leader>t",
+	":TransparentToggle<CR>",
+	{ noremap = true, silent = true, desc = "toggle transparent colorscheme" }
+)
 
-key({ "i", "n" }, "<C-k>", function()
-	require("noice.lsp").signature()
-end, { desc = "Signature Help" })
-
-key("n", "<leader>e", function()
-	MiniFiles.open()
-end, opts)
-
-key("i", "<C-n>", function()
-	require("neogen").jump_next()
-end, opts)
-
-key("i", "<C-p>", function()
-	require("neogen").jump_prev()
-end, opts)
+key("n", "<leader>dd", function()
+	vim.diagnostic.enable(false)
+end, { noremap = true, silent = true, desc = "remove diagnostic" })

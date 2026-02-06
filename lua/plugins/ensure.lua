@@ -2,7 +2,7 @@ return {
 
 	{
 		"noirbizarre/ensure.nvim",
-		event = "InsertEnter",
+		event = { "InsertEnter", "BufReadPost", "BufNewFile" },
 		opts = {
 
 			lsp = {
@@ -33,7 +33,7 @@ return {
 				sh = "beautysh",
 				c = "clang-format",
 				cpp = "clang-format",
-				cmake = "cmakelang",
+				cmake = "gersemi",
 				rust = "rustfmt",
 				go = "gofmt",
 				python = { "ruff_format", "ruff_organize_imports" },
@@ -47,11 +47,11 @@ return {
 			},
 
 			linters = {
-				-- lua = "luacheck",
+				lua = "luacheck",
 				sh = "shellcheck",
 				c = "clang-tidy",
 				cpp = "cpplint",
-				cmake = "cmakelang",
+				cmake = "cmakelint",
 				rust = "bacon",
 				python = "ruff",
 				html = "htmlhint",

@@ -2,7 +2,7 @@ return {
 	{
 		"nvim-mini/mini.nvim",
 		version = "*",
-		event = { "BufReadPost", "BufNewFile" },
+		event = { "InsertEnter", "BufReadPost", "BufNewFile" },
 		config = function()
 			require("mini.ai").setup()
 			require("mini.align").setup()
@@ -21,6 +21,10 @@ return {
 					start_jumping = "\\",
 				},
 			})
+
+			vim.keymap.set("n", "<leader>e", function()
+				MiniFiles.open()
+			end, { noremap = true, silent = true, desc = "file explorer" })
 
 			-- require("mini.folds").setup()
 		end,

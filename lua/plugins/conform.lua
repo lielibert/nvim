@@ -5,7 +5,7 @@ return {
 		event = "BufReadPost",
 		config = function()
 			require("conform").setup({
-				format_on_save = true,
+				-- format_on_save = true,
 			})
 
 			vim.keymap.set("n", "<leader>fm", function()

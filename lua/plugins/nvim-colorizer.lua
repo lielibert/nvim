@@ -1,6 +1,6 @@
 return {
 	"norcalli/nvim-colorizer.lua",
-	event = "InsertEnter",
+	event = { "InsertEnter", "BufReadPost", "BufNewFile" },
 	priority = 2001,
 	config = function()
 		-- Attaches to every FileType mode

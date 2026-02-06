@@ -2,7 +2,7 @@ return {
 	{
 		"jake-stewart/multicursor.nvim",
 		branch = "1.0",
-		event = "InsertEnter",
+		event = { "InsertEnter", "BufReadPost", "BufNewFile" },
 		priority = 2004,
 		config = function()
 			local mc = require("multicursor-nvim")

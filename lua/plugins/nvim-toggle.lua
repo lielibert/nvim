@@ -1,7 +1,7 @@
 return {
 	{
 		"nguyenvukhang/nvim-toggler",
-		event = "InsertEnter",
+		event = { "InsertEnter", "BufReadPost", "BufNewFile" },
 		priority = 2002,
 		config = function()
 			require("nvim-toggler").setup({

@@ -32,7 +32,10 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Setup plugins
 require("lazy").setup({
-	defaults = { lazy = true }, -- EVERYTHING lazy by default
+
+	-- EVERYTHING lazy by default
+	defaults = { lazy = true },
+
 	-- config file are in the plugin folder.
 	require("plugins.base16-nvim"),
 	require("plugins.snacks"),
@@ -60,7 +63,7 @@ require("lazy").setup({
 	require("plugins.which-key"),
 	-- require("plugins.copilot"), -- load when you want to use copilot
 
-	require("plugins.custom"), -- bring your plugins
+	require("plugins.custom"), -- bring your own plugins
 })
 
 -- additional imports

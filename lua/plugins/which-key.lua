@@ -1,15 +1,10 @@
 return {
-
 	"folke/which-key.nvim",
 	event = "InsertEnter",
 	opts = {
-		triggers = {
-			{ "<leader>", mode = { "v" } },
-		},
+		triggers = { { "none", mode = { "n" } } },
 	},
-
 	keys = {
-
 		{
 			"<leader>?",
 			function()

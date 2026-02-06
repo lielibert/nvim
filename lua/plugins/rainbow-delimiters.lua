@@ -1,6 +1,6 @@
 return {
 	"HiPhish/rainbow-delimiters.nvim",
-	event = "InsertEnter",
+	event = { "InsertEnter", "BufReadPost", "BufNewFile" },
 	config = function()
 		require("rainbow-delimiters.setup").setup({
 			strategy = {
