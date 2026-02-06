@@ -53,6 +53,7 @@ require("lazy").setup({
 	require("plugins.nvim-lint"),
 	require("plugins.nvim-dap"),
 	require("plugins.mini"),
+	require("plugins.flash"),
 	require("plugins.diagflow"),
 	require("plugins.multiplecursor"),
 	require("plugins.lualine"),
