@@ -14,7 +14,7 @@ vim.opt.showbreak = "↳" -- Prefix for wrapped lines
 vim.opt.breakindent = true -- Makes wrapped lines look neatly indented
 
 -- to use custom plugins make a custom.lua file in the plugins dir or a init.lua in custom folder in plugins dir and then add plugins.
-package.path = package.path .. ";custom/?.lua"
+package.path = package.path .. ";" .. vim.fn.stdpath("config") .. "/custom/?.lua"
 local Pstatus, Presult = pcall(require, "custom-plugins") -- bring your own plugins
 if not Pstatus or not Presult then
 	Presult = {}
