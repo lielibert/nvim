@@ -16,7 +16,7 @@ vim.opt.breakindent = true -- makes wrapped lines look neatly indented
 -- to use custom plugins add them in the custom-plugins file in the custom folder
 package.path = package.path .. ";" .. vim.fn.stdpath("config") .. "/custom/?.lua"
 local Pstatus, Presult = pcall(require, "custom-plugins") -- bring your own plugins
-if not Pstatus or Presult then
+if not Pstatus or type(Presult)== "boolean" and Presult then
 	Presult = {}
 end
 
