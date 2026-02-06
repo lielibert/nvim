@@ -1,22 +1,22 @@
-vim.g.mapleader = " " -- Set mapleader
+vim.g.mapleader = " " -- set mapleader
 
-vim.loader.enable() -- Speeds up require() by caching compiled Lua bytecode
-vim.opt.termguicolors = true -- True terminal colors
-vim.opt.clipboard = "unnamedplus" -- For clipboard
-vim.opt.relativenumber = true -- For relativenumber
-vim.opt.showmatch = false -- Briefly jumps to the matching bracket when you type ) ] or }
-vim.opt.ignorecase = true -- Ignore the case when searching
+vim.loader.enable() -- speeds up require() by caching compiled Lua bytecode
+vim.opt.termguicolors = true -- true terminal colors
+vim.opt.clipboard = "unnamedplus" -- for clipboard
+vim.opt.relativenumber = true -- for relativenumber
+vim.opt.showmatch = false -- briefly jumps to the matching bracket when you type ) ] or }
+vim.opt.ignorecase = true -- ignore the case when searching
 vim.opt.smartcase = true -- search become case sensitive when using capital letters
-vim.opt.ttyfast = true -- It tells that the terminal is fast, so it can optimize screen redraws.
-vim.opt.wrap = true -- Wraping for long text
-vim.opt.linebreak = true -- Wrap lines at word boundaries instead of cutting words mid-way
-vim.opt.showbreak = "↳" -- Prefix for wrapped lines
-vim.opt.breakindent = true -- Makes wrapped lines look neatly indented
+vim.opt.ttyfast = true -- it tells that the terminal is fast, so it can optimize screen redraws.
+vim.opt.wrap = true -- wraping for long text
+vim.opt.linebreak = true -- wrap lines at word boundaries instead of cutting words mid-way
+vim.opt.showbreak = "↳" -- prefix for wrapped lines
+vim.opt.breakindent = true -- makes wrapped lines look neatly indented
 
--- to use custom plugins make a custom.lua file in the plugins dir or a init.lua in custom folder in plugins dir and then add plugins.
+-- to use custom plugins add them in the custom-plugins file in the custom folder
 package.path = package.path .. ";" .. vim.fn.stdpath("config") .. "/custom/?.lua"
 local Pstatus, Presult = pcall(require, "custom-plugins") -- bring your own plugins
-if not Pstatus or not Presult then
+if not Pstatus or Presult then
 	Presult = {}
 end
 
@@ -36,7 +36,7 @@ vim.opt.rtp:prepend(lazypath)
 -- Setup plugins
 require("lazy").setup({
 
-	-- EVERYTHING lazy by default
+	-- everything lazy by default
 	defaults = { lazy = true },
 
 	-- config file are in the plugin folder.
@@ -73,4 +73,7 @@ require("config.themes")
 require("config.keymaps")
 require("config.commands")
 require("config.macros")
-pcall(require, "custom-config") --  customize your keymaps, command, macro etc
+
+-- customize your keymaps, command, macro etc
+-- edit the custom-config file in the custom folder
+pcall(require, "custom-config")
