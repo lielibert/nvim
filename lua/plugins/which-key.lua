@@ -1,6 +1,6 @@
 return {
 	"folke/which-key.nvim",
-	event = "InsertEnter",
+	event = { "InsertEnter", "BufReadPost", "BufNewFile" },
 	opts = {
 		triggers = { { "none", mode = { "n" } } },
 	},

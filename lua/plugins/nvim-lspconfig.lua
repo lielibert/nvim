@@ -3,7 +3,7 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		opts = {},
-		event = { "BufReadPost", "BufNewFile" },
+		event = { "InsertEnter", "BufReadPost", "BufNewFile" },
 		dependencies = {
 			"saghen/blink.cmp",
 		},

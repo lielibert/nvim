@@ -2,7 +2,7 @@ return {
 	{
 		"stevearc/conform.nvim",
 		opts = {},
-		event = "BufReadPost",
+		event = { "InsertEnter", "BufReadPost", "BufNewFile" },
 		config = function()
 			require("conform").setup({
 				-- format_on_save = true,

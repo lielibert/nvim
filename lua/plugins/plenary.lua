@@ -1,4 +1,4 @@
 return {
 	"nvim-lua/plenary.nvim",
-	event = "InsertEnter",
+	event = { "InsertEnter", "BufReadPost", "BufNewFile" },
 }

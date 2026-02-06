@@ -1,7 +1,7 @@
 return {
 	{
 		"chrisgrieser/nvim-scissors",
-		event = { "BufReadPost", "BufNewFile" },
+		event = { "InsertEnter", "BufReadPost", "BufNewFile" },
 		opts = {
 			snippetDir = vim.fn.stdpath("config") .. "/snippets",
 		},

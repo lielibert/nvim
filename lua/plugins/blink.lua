@@ -1,7 +1,7 @@
 return {
 	{
 		"saghen/blink.cmp",
-		event = "InsertEnter",
+		event = { "InsertEnter", "BufReadPost", "BufNewFile" },
 		priority = 2008,
 		version = "1.*",
 		dependencies = {

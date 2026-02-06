@@ -3,7 +3,7 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		-- lazy = false,
-		event = { "BufReadPost", "BufNewFile" },
+		event = { "InsertEnter", "BufReadPost", "BufNewFile" },
 		build = ":TSUpdate",
 		config = function()
 			require("nvim-treesitter").install({ "rust", "javascript", "cpp", "regex" })
@@ -23,7 +23,7 @@ return {
 		dependenies = {
 			"nvim-treesitter/nvim-treesitter",
 		},
-		event = { "BufReadPost", "BufNewFile" },
+		event = { "InsertEnter", "BufReadPost", "BufNewFile" },
 		branch = "main",
 		init = function()
 			-- Disable entire built-in ftplugin mappings to avoid conflicts.
