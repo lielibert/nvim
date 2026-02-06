@@ -1,4 +1,5 @@
 lazy-lock.json
 snippets/*
 !snippets/.gitkeep
-lua/plugins/custom/
+custom/*
+!custom/.gitkeep

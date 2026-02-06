@@ -13,8 +13,12 @@ vim.opt.linebreak = true -- Wrap lines at word boundaries instead of cutting wor
 vim.opt.showbreak = "↳" -- Prefix for wrapped lines
 vim.opt.breakindent = true -- Makes wrapped lines look neatly indented
 
--- Comment out the winbar section in lualine for this to work
--- vim.opt.winbar = " " -- for adding some space at the top
+-- to use custom plugins make a custom.lua file in the plugins dir or a init.lua in custom folder in plugins dir and then add plugins.
+package.path = package.path .. ";custom/?.lua"
+local Pstatus, Presult = pcall(require, "custom-plugins") -- bring your own plugins
+if not Pstatus or not Presult then
+	Presult = {}
+end
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -29,7 +33,6 @@ if not vim.loop.fs_stat(lazypath) then
 	})
 end
 vim.opt.rtp:prepend(lazypath)
-
 -- Setup plugins
 require("lazy").setup({
 
@@ -62,8 +65,7 @@ require("lazy").setup({
 	require("plugins.nvim-transparent"),
 	require("plugins.which-key"),
 	-- require("plugins.copilot"), -- load when you want to use copilot
-
-	require("plugins.custom"), -- bring your own plugins
+	Presult -- custom plugin
 })
 
 -- additional imports
@@ -71,3 +73,4 @@ require("config.themes")
 require("config.keymaps")
 require("config.commands")
 require("config.macros")
+pcall(require, "custom-config") --  customize your keymaps, command, macro etc
