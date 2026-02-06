@@ -16,5 +16,9 @@ key(
 )
 
 key("n", "<leader>dd", function()
-	vim.diagnostic.enable(false)
+	if vim.diagnostic.is_enabled() then
+		vim.diagnostic.enable(false)
+	else
+		vim.diagnostic.enable(true)
+	end
 end, { noremap = true, silent = true, desc = "remove diagnostic" })

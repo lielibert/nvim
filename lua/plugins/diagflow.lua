@@ -26,7 +26,7 @@ return {
 				placement = "top", -- 'top', 'inline'
 				inline_padding_left = 0, -- the padding left when the placement is inline
 				update_event = { "DiagnosticChanged", "BufReadPost" }, -- the event that updates the diagnostics cache
-				toggle_event = {}, -- if InsertEnter, can toggle the diagnostics on inserts
+				toggle_event = { "InsertEnter" }, -- if InsertEnter, can toggle the diagnostics on inserts
 				show_sign = false, -- set to true if you want to render the diagnostic sign before the diagnostic message
 				render_event = { "DiagnosticChanged", "CursorMoved" },
 				border_chars = {
@@ -40,16 +40,6 @@ return {
 				show_borders = false,
 			})
 
-			vim.diagnostic.config({
-				signs = {
-					text = {
-						[vim.diagnostic.severity.ERROR] = " ✗",
-						[vim.diagnostic.severity.WARN] = " ⚠",
-						[vim.diagnostic.severity.INFO] = " ℹ",
-						[vim.diagnostic.severity.HINT] = " ➤",
-					},
-				},
-			})
 		end,
 	},
 }

@@ -12,11 +12,12 @@ vim.opt.wrap = true -- wraping for long text
 vim.opt.linebreak = true -- wrap lines at word boundaries instead of cutting words mid-way
 vim.opt.showbreak = "↳" -- prefix for wrapped lines
 vim.opt.breakindent = true -- makes wrapped lines look neatly indented
+vim.opt.signcolumn = "yes" -- always show sign column
 
 -- to use custom plugins add them in the custom-plugins file in the custom folder
 package.path = package.path .. ";" .. vim.fn.stdpath("config") .. "/custom/?.lua"
 local Pstatus, Presult = pcall(require, "custom-plugins") -- bring your own plugins
-if not Pstatus or type(Presult)== "boolean" and Presult then
+if not Pstatus or type(Presult) == "boolean" and Presult then
 	Presult = {}
 end
 
@@ -65,7 +66,7 @@ require("lazy").setup({
 	require("plugins.nvim-transparent"),
 	require("plugins.which-key"),
 	-- require("plugins.copilot"), -- load when you want to use copilot
-	Presult -- custom plugin
+	Presult, -- custom plugin
 })
 
 -- additional imports

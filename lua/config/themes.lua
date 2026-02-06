@@ -41,3 +41,15 @@ vim.api.nvim_create_autocmd("colorscheme", {
 })
 
 vim.cmd.colorscheme("base16-tokyo-night-storm")
+
+vim.diagnostic.config({
+	update_in_insert = true,
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = " ✗",
+			[vim.diagnostic.severity.WARN] = " ⚠",
+			[vim.diagnostic.severity.INFO] = " ℹ",
+			[vim.diagnostic.severity.HINT] = " ➤",
+		},
+	},
+})

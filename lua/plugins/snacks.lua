@@ -5,11 +5,11 @@ return {
 	lazy = false,
 	opts = {
 		win = { enabled = true, backdrop = false },
-		terminal = { enabled = true },
+		terminal = { enabled = false },
 		animate = { enabled = true },
 		bufdelete = { enabled = true },
 		debug = { enabled = false },
-		zen = { enabled = false },
+		zen = { enabled = true },
 		lazygit = { enabled = true },
 		bigfile = { enabled = true },
 		dashboard = { enabled = true },
@@ -23,9 +23,7 @@ return {
 		quickfile = { enabled = true },
 		scope = { enabled = true },
 		scroll = { enabled = true },
-		statuscolumn = {
-			enabled = true,
-		},
+		statuscolumn = { enabled = false },
 		words = { enabled = true, treesitter = true },
 		git = { enabled = true },
 		gitbrowse = { enabled = true },
@@ -333,7 +331,7 @@ return {
 			desc = "Undo History",
 		},
 		{
-			"<leader>uC",
+			"<leader>cs",
 			function()
 				Snacks.picker.colorschemes()
 			end,
@@ -434,7 +432,7 @@ return {
 			desc = "Delete Buffer",
 		},
 		{
-			"<leader>cR",
+			"<leader>R",
 			function()
 				Snacks.rename.rename_file()
 			end,
@@ -462,20 +460,20 @@ return {
 			end,
 			desc = "Dismiss All Notifications",
 		},
-		{
-			"<c-/>",
-			function()
-				Snacks.terminal()
-			end,
-			desc = "Toggle Terminal",
-		},
-		{
-			"<c-_>",
-			function()
-				Snacks.terminal()
-			end,
-			desc = "which_key_ignore",
-		},
+		-- {
+		-- 	"<c-/>",
+			-- function()
+		-- 		Snacks.terminal()
+		-- 	end,
+		-- 	desc = "Toggle Terminal",
+		-- },
+		-- {
+		-- 	"<c-_>",
+		-- 	function()
+		-- 		Snacks.terminal()
+		-- 	end,
+		-- 	desc = "which_key_ignore",
+		-- },
 		-- {
 		-- 	"]]",
 		-- 	function()
