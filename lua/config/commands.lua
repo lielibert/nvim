@@ -11,6 +11,7 @@ autocmd("InsertEnter", {
 
 autocmd("InsertLeave", {
 	callback = function()
+		vim.opt.number = false
 		vim.opt.relativenumber = true
 	end,
 })

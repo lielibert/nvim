@@ -1,25 +1,17 @@
 vim.g.mapleader = " " -- set mapleader
 
 vim.loader.enable() -- speeds up require() by caching compiled Lua bytecode
+vim.opt.ttyfast = true -- it tells that the terminal is fast, so it can optimize screen redraws.
 vim.opt.termguicolors = true -- true terminal colors
-vim.opt.clipboard = "unnamedplus" -- for clipboard
 vim.opt.relativenumber = true -- for relativenumber
-vim.opt.showmatch = false -- briefly jumps to the matching bracket when you type ) ] or }
 vim.opt.ignorecase = true -- ignore the case when searching
 vim.opt.smartcase = true -- search become case sensitive when using capital letters
-vim.opt.ttyfast = true -- it tells that the terminal is fast, so it can optimize screen redraws.
 vim.opt.wrap = true -- wraping for long text
 vim.opt.linebreak = true -- wrap lines at word boundaries instead of cutting words mid-way
 vim.opt.showbreak = "↳" -- prefix for wrapped lines
 vim.opt.breakindent = true -- makes wrapped lines look neatly indented
 vim.opt.signcolumn = "yes" -- always show sign column
-
--- to use custom plugins add them in the custom-plugins file in the custom folder
-package.path = package.path .. ";" .. vim.fn.stdpath("config") .. "/custom/?.lua"
-local Pstatus, Presult = pcall(require, "custom-plugins") -- bring your own plugins
-if not Pstatus or type(Presult) == "boolean" and Presult then
-	Presult = {}
-end
+-- vim.opt.clipboard = "unnamedplus" -- for clipboard
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -67,7 +59,6 @@ require("lazy").setup({
 	require("plugins.nvim-transparent"),
 	require("plugins.which-key"),
 	-- require("plugins.copilot"), -- load when you want to use copilot
-	Presult, -- custom plugin
 })
 
 -- additional imports
@@ -75,7 +66,3 @@ require("config.themes")
 require("config.keymaps")
 require("config.commands")
 require("config.macros")
-
--- customize your keymaps, command, macro etc
--- edit the custom-config file in the custom folder
-pcall(require, "custom-config")
