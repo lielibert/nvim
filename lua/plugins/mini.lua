@@ -20,7 +20,6 @@ return {
 				MiniFiles.open()
 			end, { noremap = true, silent = true, desc = "file explorer" })
 
-			-- require("mini.folds").setup()
 		end,
 	},
 }

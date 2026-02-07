@@ -42,7 +42,7 @@ return {
 				javascript = "prettierd",
 				typescript = "prettierd",
 				vue = "prettierd",
-				latex = "latexindent",
+				latex = "tex-fmt",
 				json = "jq",
 			},
 

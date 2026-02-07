@@ -9,8 +9,8 @@ return {
 			})
 
 			vim.keymap.set("n", "<leader>fm", function()
-				require("conform").format({ async = true })
-			end, { noremap = true, silent = true, desc = "Format Whole File" })
+				vim.lsp.buf.format({ async = true })
+			end, { noremap = true, silent = true, desc = "format whole file" })
 		end,
 	},
 }
