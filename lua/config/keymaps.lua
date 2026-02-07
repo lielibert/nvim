@@ -1,7 +1,9 @@
 -- Change the leaderkey in the init.lua file
 
 local key = vim.keymap.set
+
 key("n", "<leader>so", ":so<CR>", { noremap = true, silent = true, desc = "source nvim config" })
+key("n", "<leader>w", ":w<CR>", { noremap = true, silent = true, desc = "write file" })
 key("n", "<C-h>", ":noh<CR>", { noremap = true, silent = true, desc = "clear hl" })
 key("i", "<C-f>", "<Esc>la", { noremap = true, silent = true, desc = "next character" })
 key("i", "<C-b>", "<Esc>i", { noremap = true, silent = true, desc = "next character" })

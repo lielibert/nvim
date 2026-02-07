@@ -1,13 +1,13 @@
 vim.g.mapleader = " " -- set mapleader
 
 vim.loader.enable() -- speeds up require() by caching compiled Lua bytecode
-vim.opt.ttyfast = true -- it tells that the terminal is fast, so it can optimize screen redraws.
+vim.opt.ttyfast = true -- it tells that the terminal is fast, screen redraws.
 vim.opt.termguicolors = true -- true terminal colors
 vim.opt.relativenumber = true -- for relativenumber
 vim.opt.ignorecase = true -- ignore the case when searching
 vim.opt.smartcase = true -- search become case sensitive when using capital letters
 vim.opt.wrap = true -- wraping for long text
-vim.opt.linebreak = true -- wrap lines at word boundaries instead of cutting words mid-way
+vim.opt.linebreak = true -- wrap lines at word boundaries
 vim.opt.showbreak = "↳" -- prefix for wrapped lines
 vim.opt.breakindent = true -- makes wrapped lines look neatly indented
 vim.opt.signcolumn = "yes" -- always show sign column
@@ -53,7 +53,6 @@ require("lazy").setup({
 	require("plugins.nvim-colorizer"),
 	require("plugins.nvim-toggle"),
 	require("plugins.dial"),
-	require("plugins.plenary"),
 	require("plugins.neogen"),
 	require("plugins.rainbow-delimiters"),
 	require("plugins.nvim-transparent"),

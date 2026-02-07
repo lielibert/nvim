@@ -9,7 +9,6 @@ return {
 		require("lualine").setup({
 			options = {
 				icons_enabled = true,
-				theme = "base16",
 				component_separators = { left = "", right = "" },
 				section_separators = { left = "", right = "" },
 				disabled_filetypes = {
@@ -58,7 +57,6 @@ return {
 					"diff",
 					"diagnostics",
 				},
-				-- lualine_c = { "filename" },
 				lualine_c = {},
 				lualine_x = { "encoding", "fileformat", "filetype" },
 				lualine_y = { "progress" },
@@ -85,19 +83,6 @@ return {
 						return os.date("%a %H:%M")
 					end,
 				},
-
-				-- For Bright style
-				-- lualine_a = {
-				-- 	{
-				-- 		"filename",
-				-- 		path = 1, -- 2 for absolute path
-				-- 	},
-				-- },
-				-- lualine_z = {
-				-- 	function()
-				-- 		return os.date("%a %H:%M")
-				-- 	end,
-				-- },
 			},
 			inactive_winbar = {},
 			extensions = {},
