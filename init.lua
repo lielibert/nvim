@@ -11,6 +11,7 @@ vim.opt.linebreak = true -- wrap lines at word boundaries
 vim.opt.showbreak = "↳" -- prefix for wrapped lines
 vim.opt.breakindent = true -- makes wrapped lines look neatly indented
 vim.opt.signcolumn = "yes" -- always show sign column
+vim.opt.winborder = "rounded"
 -- vim.opt.clipboard = "unnamedplus" -- for clipboard
 
 -- Bootstrap lazy.nvim

@@ -25,6 +25,7 @@ return {
 					"vue_ls",
 					-- quickshell
 					"qmlls",
+					"jsonls"
 				},
 			},
 
@@ -58,6 +59,7 @@ return {
 				css = "stylelint",
 				javascript = "eslint_d",
 				typescript = "eslint_d",
+				latex = "vale"
 			},
 
 			parsers = { "c", "cpp", "rust", "go", "lua", "python", "javascript", "typescript" },
