@@ -4,7 +4,6 @@ return {
 		version = "*",
 		event = { "InsertEnter", "BufReadPost", "BufNewFile" },
 		config = function()
-			require("mini.ai").setup()
 			require("mini.align").setup()
 			require("mini.comment").setup()
 			require("mini.operators").setup()
@@ -15,11 +14,6 @@ return {
 
 			require("mini.bracketed").setup()
 			require("mini.trailspace").setup()
-
-			vim.keymap.set("n", "<leader>e", function()
-				MiniFiles.open()
-			end, { noremap = true, silent = true, desc = "file explorer" })
-
 		end,
 	},
 }

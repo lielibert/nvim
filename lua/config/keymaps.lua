@@ -3,7 +3,6 @@
 local key = vim.keymap.set
 local autocmd = vim.api.nvim_create_autocmd
 
-key("n", "<leader>so", ":so<CR>", { silent = true, desc = "source nvim config" })
 key("n", "<leader>w", ":w<CR>", { silent = true, desc = "write file" })
 key("n", "<leader>l", ":Lazy<CR>", { silent = true, desc = "write file" })
 key("n", "<leader>m", ":Mason<CR>", { silent = true, desc = "write file" })
