@@ -3,29 +3,23 @@ return {
 	{
 		"noirbizarre/ensure.nvim",
 		event = { "InsertEnter", "BufReadPost", "BufNewFile" },
+		dependencies = {
+
+			{ "mason-org/mason.nvim",  opts = {} },
+			{ "neovim/nvim-lspconfig" },
+			{ "stevearc/conform.nvim", opts = {} },
+			{ "mfussenegger/nvim-lint" },
+			{ "danymat/neogen",        config = true, event = "InsertEnter", version = "*" },
+
+		},
 		opts = {
 
 			lsp = {
 
 				enable = {
-					"lua_ls",
-					"vimls",
-					"bashls",
-					"texlab",
-					"clangd",
-					"neocmake",
-					"rust_analyzer",
-					"gopls",
-					"pyright",
-					"html",
-					"cssls",
-					"tailwindcss",
-					"emmet_ls",
-					"eslint",
-					"vue_ls",
-					-- quickshell
-					"qmlls",
-					"jsonls"
+					"lua_ls", "vimls", "bashls", "texlab", "clangd", "neocmake", "rust_analyzer",
+					"gopls", "pyright", "html", "cssls", "tailwindcss", "emmet_ls", "eslint",
+					"vue_ls", "qmlls", "jsonls"
 				},
 			},
 
@@ -62,7 +56,7 @@ return {
 				latex = "vale"
 			},
 
-			parsers = { "c", "cpp", "rust", "go", "lua", "python", "javascript", "typescript" },
+			parsers = { "regex", "c", "cpp", "rust", "go", "lua", "python", "javascript", "typescript" },
 			packages = { "codespell" },
 		},
 	},

@@ -1,7 +1,7 @@
-vim.g.mapleader = " " -- set mapleader
+vim.g.mapleader = " " -- set leader key
 
-vim.loader.enable() -- speeds up require() by caching compiled Lua bytecode
-vim.opt.ttyfast = true -- it tells that the terminal is fast, screen redraws.
+vim.loader.enable() -- speeds up require()
+vim.opt.ttyfast = true -- it tells that the terminal is fast
 vim.opt.termguicolors = true -- true terminal colors
 vim.opt.relativenumber = true -- for relativenumber
 vim.opt.ignorecase = true -- ignore the case when searching
@@ -38,31 +38,25 @@ require("lazy").setup({
 	require("plugins.snacks"),
 	require("plugins.noice"),
 	require("plugins.nvim-treesitter"),
-	require("plugins.mason"),
 	require("plugins.ensure"),
-	require("plugins.nvim-lspconfig"),
 	require("plugins.blink"),
-	require("plugins.conform"),
-	require("plugins.nvim-lint"),
+	require("plugins.diagflow"),
 	require("plugins.nvim-dap"),
 	require("plugins.mini"),
+	require("plugins.git"),
 	require("plugins.flash"),
-	require("plugins.diagflow"),
 	require("plugins.multiplecursor"),
 	require("plugins.lualine"),
-	require("plugins.nvim-scissors"),
 	require("plugins.nvim-colorizer"),
-	require("plugins.nvim-toggle"),
 	require("plugins.dial"),
-	require("plugins.neogen"),
-	require("plugins.rainbow-delimiters"),
-	require("plugins.nvim-transparent"),
-	require("plugins.which-key"),
+	require("plugins.usefull-plugins"),
 	-- require("plugins.copilot"), -- load when you want to use copilot
 })
 
--- additional imports
-require("config.themes")
+-- config files
+require("config.hl")
+require("config.lsp-config")
 require("config.keymaps")
 require("config.commands")
 require("config.macros")
+vim.cmd.colorscheme("base16-tokyo-night-storm")
