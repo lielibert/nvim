@@ -7,6 +7,7 @@ return {
 	},
 	config = function()
 		require("lualine").setup({
+			theme = "base16",
 			options = {
 				icons_enabled = true,
 				component_separators = { left = "", right = "" },
@@ -64,9 +65,9 @@ return {
 			},
 			inactive_sections = {
 				lualine_a = {},
-				lualine_b = {},
-				lualine_c = { "filename" },
-				lualine_x = { "location" },
+				lualine_b = { "filename" },
+				lualine_c = {},
+				lualine_x = { "encoding", "fileformat", "filetype" },
 				lualine_y = {},
 				lualine_z = {},
 			},
@@ -84,7 +85,19 @@ return {
 					end,
 				},
 			},
-			inactive_winbar = {},
+			inactive_winbar = {
+				lualine_c = {
+					{
+						"filename",
+						path = 1, -- 2 for absolute path
+					},
+				},
+				lualine_x = {
+					function()
+						return os.date("%a %H:%M")
+					end,
+				},
+			},
 			extensions = {},
 		})
 	end,

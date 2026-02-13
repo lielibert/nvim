@@ -9,8 +9,6 @@ return {
 			{ "neovim/nvim-lspconfig" },
 			{ "stevearc/conform.nvim", opts = {} },
 			{ "mfussenegger/nvim-lint" },
-			{ "danymat/neogen",        config = true, event = "InsertEnter", version = "*" },
-
 		},
 		opts = {
 

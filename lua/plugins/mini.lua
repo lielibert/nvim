@@ -12,6 +12,8 @@ return {
 			require("mini.surround").setup()
 			require("mini.files").setup()
 
+			require("mini.jump").setup()
+
 			require("mini.bracketed").setup()
 			require("mini.trailspace").setup()
 		end,

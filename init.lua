@@ -27,6 +27,7 @@ if not vim.loop.fs_stat(lazypath) then
 	})
 end
 vim.opt.rtp:prepend(lazypath)
+
 -- Setup plugins
 require("lazy").setup({
 
@@ -40,11 +41,8 @@ require("lazy").setup({
 	require("plugins.nvim-treesitter"),
 	require("plugins.ensure"),
 	require("plugins.blink"),
-	require("plugins.diagflow"),
-	require("plugins.nvim-dap"),
 	require("plugins.mini"),
 	require("plugins.git"),
-	require("plugins.flash"),
 	require("plugins.multiplecursor"),
 	require("plugins.lualine"),
 	require("plugins.nvim-colorizer"),

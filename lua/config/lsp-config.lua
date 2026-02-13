@@ -11,14 +11,3 @@ vim.diagnostic.config({
 		},
 	},
 })
-
-config("qmlls", { cmd = { "qmlls6", }, })
-
-config("texlab", {
-	settings = {
-		texlab = {
-			latexFormatter = "tex-fmt",
-			bibtexFormatter = "tex-fmt",
-		}
-	}
-})
