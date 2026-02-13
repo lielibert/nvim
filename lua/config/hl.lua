@@ -14,12 +14,6 @@ local apply_hl = function()
 	hl(0, "BlinkCmpSource", { fg = "#ffffff", bg = "NONE" })
 	hl(0, "TSComment", { fg = "#888888", bg = "NONE", bold = true })
 
-	-- hl for flash.nvim
-	hl(0, "FlashLabel", { fg = "#ffffff", bg = "#ff007c", bold = true, })
-	hl(0, "FlashMatch", { fg = "#ff007c", bold = true, })
-	hl(0, "FlashCurrent", { fg = "#ffffff", bg = "#5f00ff", bold = true, })
-	hl(0, "FlashBackdrop", { fg = "#545c7e", })
-
 	-- hl for multiplecursor
 	hl(0, "MultiCursorCursor", { reverse = true })
 	hl(0, "MultiCursorVisual", { link = "Visual" })
