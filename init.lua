@@ -12,6 +12,8 @@ vim.opt.showbreak = "↳" -- prefix for wrapped lines
 vim.opt.breakindent = true -- makes wrapped lines look neatly indented
 vim.opt.signcolumn = "yes" -- always show sign column
 vim.opt.winborder = "rounded"
+vim.opt.swapfile = false -- disable swap-file
+vim.opt.undofile = true
 -- vim.opt.clipboard = "unnamedplus" -- for clipboard
 
 -- Bootstrap lazy.nvim
@@ -47,7 +49,8 @@ require("lazy").setup({
 	require("plugins.lualine"),
 	require("plugins.nvim-colorizer"),
 	require("plugins.dial"),
-	require("plugins.usefull-plugins"),
+	require("plugins.rainbow-delimiters"),
+	require("plugins.neogen"),
 	-- require("plugins.copilot"), -- load when you want to use copilot
 })
 

@@ -4,11 +4,10 @@ return {
 		"noirbizarre/ensure.nvim",
 		event = { "InsertEnter", "BufReadPost", "BufNewFile" },
 		dependencies = {
-
-			{ "mason-org/mason.nvim",  opts = {} },
 			{ "neovim/nvim-lspconfig" },
-			{ "stevearc/conform.nvim", opts = {} },
 			{ "mfussenegger/nvim-lint" },
+			{ "mason-org/mason.nvim",  opts = {} },
+			{ "stevearc/conform.nvim", opts = {} },
 		},
 		opts = {
 
@@ -54,7 +53,7 @@ return {
 				latex = "vale"
 			},
 
-			parsers = { "regex", "c", "cpp", "rust", "go", "lua", "python", "javascript", "typescript" },
+			parsers = { "regex", "lua", "c", "cpp", "rust", "go", "python", "javascript", "typescript" },
 			packages = { "codespell" },
 		},
 	},

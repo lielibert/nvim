@@ -1,4 +1,5 @@
 return {
+
 	{
 		"saghen/blink.cmp",
 		event = { "InsertEnter", "BufReadPost", "BufNewFile" },
@@ -26,7 +27,6 @@ return {
 			},
 
 			sources = { default = { "snippets", "lsp", "path", "buffer" } },
-
 			fuzzy = { implementation = "prefer_rust_with_warning" },
 		},
 		opts_extend = { "sources.default" },

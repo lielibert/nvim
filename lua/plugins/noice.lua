@@ -1,19 +1,14 @@
 return {
+
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
 		lazy = true,
 		priority = 2003,
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-		},
+		dependencies = { "MunifTanjim/nui.nvim", },
 		config = function()
 			require("noice").setup({
-				lsp = {
-					signature = {
-						enabled = false,
-					},
-				},
+				lsp = { signature = { enabled = false } },
 				presets = {
 					bottom_search = false, -- use a classic bottom cmdline for search
 					command_palette = false, -- position the cmdline and popupmenu together
