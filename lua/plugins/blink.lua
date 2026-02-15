@@ -7,7 +7,8 @@ return {
 		version = "1.*",
 		dependencies = {
 			{ "rafamadriz/friendly-snippets" },
-			{ "L3MON4D3/LuaSnip", build = "make install_jsregexp" }, -- Snippet engine
+			{ "L3MON4D3/LuaSnip",            build = "make install_jsregexp" },
+			{ "chrisgrieser/nvim-scissors",  opts = { snippetDir = vim.fn.stdpath("config") .. "/snippets" } },
 		},
 
 		build = "cargo build --release",
