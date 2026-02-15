@@ -14,18 +14,18 @@ return {
 			lsp = {
 
 				enable = {
-					"lua_ls", "vimls", "bashls", "texlab", "clangd", "neocmake", "rust_analyzer",
+					"lua_ls", "bashls", "neocmake", "clangd", "rust_analyzer",
 					"gopls", "pyright", "html", "cssls", "tailwindcss", "emmet_ls", "eslint",
-					"vue_ls", "qmlls", "jsonls"
+					"vue_ls", "jsonls", "texlab"
 				},
 			},
 
 			formatters = {
 				lua = "stylua",
 				sh = "beautysh",
+				cmake = "gersemi",
 				c = "clang-format",
 				cpp = "clang-format",
-				cmake = "gersemi",
 				rust = "rustfmt",
 				go = "gofmt",
 				python = { "ruff_format", "ruff_organize_imports" },
@@ -34,22 +34,24 @@ return {
 				javascript = "prettierd",
 				typescript = "prettierd",
 				vue = "prettierd",
-				latex = "tex-fmt",
 				json = "jq",
+				latex = "tex-fmt",
 			},
 
 			linters = {
 				lua = "luacheck",
 				sh = "shellcheck",
+				cmake = "cmakelint",
 				c = "clang-tidy",
 				cpp = "cpplint",
-				cmake = "cmakelint",
 				rust = "bacon",
+				go = "golandci-lint",
 				python = "ruff",
 				html = "htmlhint",
 				css = "stylelint",
 				javascript = "eslint_d",
 				typescript = "eslint_d",
+				vue = "eslint_d",
 				latex = "vale"
 			},
 

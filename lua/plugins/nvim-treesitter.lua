@@ -24,8 +24,6 @@ return {
 		event = { "InsertEnter", "BufReadPost", "BufNewFile" },
 		branch = "main",
 		init = function()
-			-- Disable entire built-in ftplugin mappings to avoid conflicts.
-			-- See https://github.com/neovim/neovim/tree/master/runtime/ftplugin for built-in ftplugins.
 			vim.g.no_plugin_maps = true
 
 			-- Or, disable per filetype (add as you like)
@@ -37,34 +35,14 @@ return {
 
 		config = function()
 			require("nvim-treesitter-textobjects").setup({
-				move = {
-					-- whether to set jumps in the jumplist
-					set_jumps = true,
-				},
+				move = { set_jumps = true, },
 				select = {
-					-- Automatically jump forward to textobj, similar to targets.vim
 					lookahead = true,
-					-- You can choose the select mode (default is charwise 'v')
-					--
-					-- Can also be a function which gets passed a table with the keys
-					-- * query_string: eg '@function.inner'
-					-- * method: eg 'v' or 'o'
-					-- and should return the mode ('v', 'V', or '<c-v>') or a table
-					-- mapping query_strings to modes.
 					selection_modes = {
-						["@parameter.outer"] = "v", -- charwise
-						["@function.outer"] = "V", -- linewise
+						["@parameter.outer"] = "v",
+						["@function.outer"] = "V",
 						-- ['@class.outer'] = '<c-v>', -- blockwise
 					},
-					-- If you set this to `true` (default is `false`) then any textobject is
-					-- extended to include preceding or succeeding whitespace. Succeeding
-					-- whitespace has priority in order to act similarly to eg the built-in
-					-- `ap`.
-					--
-					-- Can also be a function which gets passed a table with the keys
-					-- * query_string: eg '@function.inner'
-					-- * selection_mode: eg 'v'
-					-- and should return true of false
 					include_surrounding_whitespace = false,
 				},
 			})
@@ -80,6 +58,9 @@ return {
 			key({ "x", "o" }, "if", function() select("@function.inner", "textobjects") end)
 			key({ "x", "o" }, "ac", function() select("@class.outer", "textobjects") end)
 			key({ "x", "o" }, "ic", function() select("@class.inner", "textobjects") end)
+			key({ "x", "o" }, "am", function() select("@comment.outer", "textobjects") end)
+			key({ "x", "o" }, "im", function() select("@comment.inner", "textobjects") end)
+
 			-- You can also use captures from other query groups like `locals.scm`
 			key({ "x", "o" }, "as", function() select.select_textobject("@local.scope", "locals") end)
 
@@ -88,31 +69,39 @@ return {
 
 			-- keymaps
 			-- You can use the capture groups defined in `textobjects.scm`
-			key({ "n", "x", "o" }, "]m",
+			key({ "n", "x", "o" }, "]f",
 				function() move.goto_next_start("@function.outer", "textobjects") end)
 			key({ "n", "x", "o" }, "]]",
 				function() move.goto_next_start("@class.outer", "textobjects") end)
 			-- You can also pass a list to group multiple queries.
 			key({ "n", "x", "o" }, "]o",
 				function() move.goto_next_start({ "@loop.inner", "@loop.outer" }, "textobjects") end)
-
+			key({ "n", "x", "o" }, "]m",
+				function() move.goto_next_start({ "@comment.inner", "@comment.outer" }, "textobjects") end)
 			-- You can also use captures from other query groups like `locals.scm` or `folds.scm`
 			key({ "n", "x", "o" }, "]s", function() move.goto_next_start("@local.scope", "locals") end)
 			key({ "n", "x", "o" }, "]z", function() move.goto_next_start("@fold", "folds") end)
-			key({ "n", "x", "o" }, "]M",
+
+			key({ "n", "x", "o" }, "]F",
 				function() move.goto_next_end("@function.outer", "textobjects") end)
 			key({ "n", "x", "o" }, "][",
 				function() move.goto_next_end("@class.outer", "textobjects") end)
+			key({ "n", "x", "o" }, "]M",
+				function() move.goto_next_end("@comment.outer", "textobjects") end)
 
-			key({ "n", "x", "o" }, "[m",
+			key({ "n", "x", "o" }, "[f",
 				function() move.goto_previous_start("@function.outer", "textobjects") end)
 			key({ "n", "x", "o" }, "[[",
 				function() move.goto_previous_start("@class.outer", "textobjects") end)
+			key({ "n", "x", "o" }, "[m",
+				function() move.goto_previous_start("@comment.outer", "textobjects") end)
 
-			key({ "n", "x", "o" }, "[M",
+			key({ "n", "x", "o" }, "[F",
 				function() move.goto_previous_end("@function.outer", "textobjects") end)
 			key({ "n", "x", "o" }, "[]",
 				function() move.goto_previous_end("@class.outer", "textobjects") end)
+			key({ "n", "x", "o" }, "[M",
+				function() move.goto_previous_end("@comment.outer", "textobjects") end)
 
 			-- Go to either the start or the end, whichever is closer.
 			-- Use if you want more granular movements
@@ -120,6 +109,23 @@ return {
 				function() move.goto_next("@conditional.outer", "textobjects") end)
 			key({ "n", "x", "o" }, "[gd",
 				function() move.goto_previous("@conditional.outer", "textobjects") end)
+
+
+			local ts_repeat_move = require("nvim-treesitter-textobjects.repeatable_move")
+			-- Repeat movement with ; and ,
+			-- ensure ; goes forward and , goes backward regardless of the last direction
+			key({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move_next)
+			key({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_previous)
+
+			-- vim way: ; goes to the direction you were moving.
+			-- vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move)
+			-- vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_opposite)
+
+			-- Optionally, make builtin f, F, t, T also repeatable with ; and ,
+			key({ "n", "x", "o" }, "f", ts_repeat_move.builtin_f_expr, { expr = true })
+			key({ "n", "x", "o" }, "F", ts_repeat_move.builtin_F_expr, { expr = true })
+			key({ "n", "x", "o" }, "t", ts_repeat_move.builtin_t_expr, { expr = true })
+			key({ "n", "x", "o" }, "T", ts_repeat_move.builtin_T_expr, { expr = true })
 		end,
 	},
 }

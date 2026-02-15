@@ -1,21 +1,22 @@
 # **Introduction**
 
 <img src="./preview/1.jpg" />
-<img src="./preview/2.jpg" />
 
 <hr>
 
-A **ready to go modern** nvim lua configuration using **Lazy Plugin Manager**.</br>
+**Ready to go modern** nvim lua configuration using **Lazy Plugin Manager**.</br>
 Best for C/CPP & rust & python.</br>
 This is some-what lightweight... also 😅.
 
 > [!IMPORTANT]
-> **Dependencies**
-> + git 
+> **Dependencies for Linux**
+> + git
 > + curl
 > + ripgrep
 > + nodejs npm
 > + rust nightly (if building blink.cmp)
+
+> [!NOTE] for window use healthcheck to figure out Dependencies
 
 ## ✨ Configure and Setup
 
@@ -45,26 +46,28 @@ cd %LOCALAPPDATA% && git clone https://github.com/lielibert/nvim.git
 
 ## 🔥Plugins
 
-| Feature | Plugins |
-|---------|---------|
-| **Theme** | base-16-color + transparent |
-| **lsp** | installed vai mason.nvim handled by ensure.nvim |
+| **Theme** | base-16-color |
+| **File** | mini.files |
+| **lsp** | installed vai mason.nvim managed by ensure.nvim |
 | **Complition** | blink.cmp |
-| **Diagnostics** | diagflow |
-| **Debugging** | nvim-dap + U.I. |
+| **Snippets** | luasnip + nvim-scissor + friendly-snippets |
+| **Git** | gitsigns + diffview + neogit, or use mini.git |
 
-+ Also contain features like 
-    + treesitter, textobject 
++ Also contain features like
+    + treesitter, textobject
     + lualine
-    + nvim-scissor
     + multicursor
     + mini.nvim
     + raindow-delimiters
-+ Enhance UI using noice.nvim and snacks.nvim
++ Enhanced UI using noice.nvim and snacks.nvim
 + Also contain Plugin for AI (copilot), can be enable in init.lua file
 + Use browser for AI chat, nothing is perfect.
 
-> [!NOTE]
-> Install clipboard and clipboard manager <br>
-> Use ocs52 in nvim to copy text from remote machine to local machine <br>
-> This works in all platform
+### Tips
+> Install clipboard and clipboard manager in linux <br>
+> Use ocs52 in nvim to copy text in nvim from remote machine to local machine <br>
+
+<hr>
+
+<img src="./preview/2.jpg" />
+

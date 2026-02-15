@@ -2,9 +2,7 @@ return {
 	"nvim-lualine/lualine.nvim",
 	event = { "InsertEnter", "BufReadPost", "BufNewFile" },
 	priority = 2006,
-	dependencies = {
-		{ "nvim-tree/nvim-web-devicons" },
-	},
+	dependencies = { { "nvim-tree/nvim-web-devicons" }, },
 	config = function()
 		require("lualine").setup({
 			theme = "base16",
