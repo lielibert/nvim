@@ -60,7 +60,10 @@ return {
 			key({ "x", "o" }, "ic", function() select("@class.inner", "textobjects") end)
 			key({ "x", "o" }, "am", function() select("@comment.outer", "textobjects") end)
 			key({ "x", "o" }, "im", function() select("@comment.inner", "textobjects") end)
-
+			key({ "x", "o" }, "am", function() select("@comment.outer", "textobjects") end)
+			key({ "x", "o" }, "im", function() select("@comment.inner", "textobjects") end)
+			key({ "x", "o" }, "aa", function() select("@parameter.outer", "textobjects") end)
+			key({ "x", "o" }, "ia", function() select("@parameter.inner", "textobjects") end)
 			-- You can also use captures from other query groups like `locals.scm`
 			key({ "x", "o" }, "as", function() select.select_textobject("@local.scope", "locals") end)
 

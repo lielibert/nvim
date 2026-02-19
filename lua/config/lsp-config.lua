@@ -11,3 +11,12 @@ vim.diagnostic.config({
 		},
 	},
 })
+
+config("texlab", {
+	settings = {
+		texlab = {
+			latexFormatter = "tex-fmt",
+			bibtexFormatter = "tex-fmt",
+		}
+	}
+})

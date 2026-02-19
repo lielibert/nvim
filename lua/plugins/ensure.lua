@@ -42,7 +42,7 @@ return {
 				lua = "luacheck",
 				sh = "shellcheck",
 				cmake = "cmakelint",
-				c = "clang-tidy",
+				c = "cpplint",
 				cpp = "cpplint",
 				rust = "bacon",
 				go = "golandci-lint",

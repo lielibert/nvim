@@ -22,6 +22,7 @@ local apply_hl = function()
 	hl(0, "MultiCursorDisabledCursor", { reverse = true })
 	hl(0, "MultiCursorDisabledVisual", { link = "Visual" })
 	hl(0, "MultiCursorDisabledSign", { link = "SignColumn" })
+	hl(0, "MiniTrailspace", { bg="#808080" })
 end
 
 vim.api.nvim_create_autocmd("colorscheme", { callback = apply_hl, })

@@ -4,6 +4,7 @@ return {
 	priority = 10000,
 	lazy = false,
 	opts = {
+		win = { enabled= true, backdrop = 100},
 		terminal = { enabled = true, win = { style = "float" } },
 		animate = { enabled = true },
 		bufdelete = { enabled = true },

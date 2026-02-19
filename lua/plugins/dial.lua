@@ -4,19 +4,21 @@ return {
 	config = function()
 		local augend = require("dial.augend")
 		require("dial.config").augends:register_group({
-			-- default augends used when no group name is specified
+
 			default = {
-				augend.integer.alias.decimal, -- nonnegative decimal number (0, 1, 2, 3, ...)
-				augend.integer.alias.hex, -- nonnegative hex number  (0x01, 0x1a1f, etc.)
-				augend.date.alias["%Y/%m/%d"], -- date (2022/02/19, etc.)
-				augend.constant.alias.bool, -- boolean value (true <-> false)
+				augend.integer.alias.decimal,
+				augend.integer.alias.hex,
+				augend.date.alias["%Y/%m/%d"],
+				augend.constant.alias.bool,
+				augend.constant.alias.alpha,
+				augend.constant.alias.Alpha
 			},
 
-			-- augends used when group with name `mygroup` is specified
+
 			mygroup = {
 				augend.integer.alias.decimal,
-				augend.constant.alias.bool, -- boolean value (true <-> false)
-				augend.date.alias["%m/%d/%Y"], -- date (02/19/2022, etc.)
+				augend.constant.alias.bool,
+				augend.date.alias["%m/%d/%Y"],
 			},
 		})
 
