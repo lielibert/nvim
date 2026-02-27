@@ -11,7 +11,7 @@ return {
 			{ "chrisgrieser/nvim-scissors",  opts = { snippetDir = vim.fn.stdpath("config") .. "/snippets" } },
 		},
 
-		build = "cargo build --release",
+		-- build = "cargo build --release",
 
 		opts = {
 			signature = { enabled = false },
