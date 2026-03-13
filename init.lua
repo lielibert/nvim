@@ -37,7 +37,7 @@ require("lazy").setup({
 	defaults = { lazy = true },
 
 	-- config file are in the plugin folder.
-	require("plugins.base16-nvim"),
+	require("plugins.helpfull-plugins"),
 	require("plugins.snacks"),
 	require("plugins.noice"),
 	require("plugins.nvim-treesitter"),
@@ -47,10 +47,7 @@ require("lazy").setup({
 	require("plugins.git"),
 	require("plugins.multiplecursor"),
 	require("plugins.lualine"),
-	require("plugins.nvim-colorizer"),
 	require("plugins.dial"),
-	require("plugins.rainbow-delimiters"),
-	require("plugins.neogen"),
 	-- require("plugins.copilot"), -- load when you want to use copilot
 })
 
