@@ -55,7 +55,6 @@ return {
 				latex = "vale"
 			},
 
-			parsers = { "regex", "lua", "c", "cpp", "rust", "go", "python", "javascript", "typescript" },
 			packages = { "codespell" },
 		},
 	},

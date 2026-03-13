@@ -74,7 +74,7 @@ return {
 			-- You can use the capture groups defined in `textobjects.scm`
 			key({ "n", "x", "o" }, "]f",
 				function() move.goto_next_start("@function.outer", "textobjects") end)
-			key({ "n", "x", "o" }, "]]",
+			key({ "n", "x", "o" }, "]c",
 				function() move.goto_next_start("@class.outer", "textobjects") end)
 			-- You can also pass a list to group multiple queries.
 			key({ "n", "x", "o" }, "]o",
@@ -84,6 +84,10 @@ return {
 			-- You can also use captures from other query groups like `locals.scm` or `folds.scm`
 			key({ "n", "x", "o" }, "]s", function() move.goto_next_start("@local.scope", "locals") end)
 			key({ "n", "x", "o" }, "]z", function() move.goto_next_start("@fold", "folds") end)
+			key({ "n", "x", "o" }, "]ia", function() move.goto_next_start("@parameter.inner") end)
+			key({ "n", "x", "o" }, "]aa", function() move.goto_next_start("@parameter.outer") end)
+			key({ "n", "x", "o" }, "]ib", function() move.goto_next_start("@scopename.inner") end)
+			key({ "n", "x", "o" }, "]ab", function() move.goto_next_start("@frame.outer") end)
 
 			key({ "n", "x", "o" }, "]F",
 				function() move.goto_next_end("@function.outer", "textobjects") end)
@@ -94,7 +98,7 @@ return {
 
 			key({ "n", "x", "o" }, "[f",
 				function() move.goto_previous_start("@function.outer", "textobjects") end)
-			key({ "n", "x", "o" }, "[[",
+			key({ "n", "x", "o" }, "[c",
 				function() move.goto_previous_start("@class.outer", "textobjects") end)
 			key({ "n", "x", "o" }, "[m",
 				function() move.goto_previous_start("@comment.outer", "textobjects") end)

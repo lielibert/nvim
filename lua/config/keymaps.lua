@@ -3,7 +3,6 @@
 local key = vim.keymap.set
 local autocmd = vim.api.nvim_create_autocmd
 
-key("n", "<CR>", "o<Esc>", { silent = true, desc = "create line" })
 key("n", "g;", "$a;<Esc>", { silent = true, desc = "add ; to end" })
 key("n", "g:", "$a:<Esc>", { silent = true, desc = "add : to end" })
 key("n", "g,", "$a,<Esc>", { silent = true, desc = "add , to end" })
@@ -22,4 +21,8 @@ key("n", "<leader>w", ":w<CR>", { silent = true, desc = "write file" })
 key("n", "<leader>l", ":Lazy<CR>", { silent = true, desc = "write file" })
 key("n", "<leader>m", ":Mason<CR>", { silent = true, desc = "write file" })
 key("n", "<leader>t", ":TransparentToggle<CR>", { silent = true, desc = "toggle transparent colorscheme" })
-key("n", "<leader>e", ":lua MiniFiles.open()<CR>", { silent = true, desc = "file explorer", })
+key("n", "<leader>e", function()
+	if not MiniFiles.close() then MiniFiles.open() end
+end, { silent = true, desc = "file explorer", })
+key("n", "<leader>se", function() require("scissors").editSnippet() end, { desc = "Snippet: Edit" })
+key({ "n", "x" }, "<leader>sa", function() require("scissors").addNewSnippet() end, { desc = "Snippet: Add" })

@@ -58,8 +58,8 @@ return {
 				},
 				lualine_c = {},
 				lualine_x = { "encoding", "fileformat", "filetype" },
-				lualine_y = { "progress" },
-				lualine_z = { "location" },
+				lualine_y = {},
+				lualine_z = { "%l:%c / %L" },
 			},
 			inactive_sections = {
 				lualine_a = {},
@@ -78,9 +78,7 @@ return {
 					},
 				},
 				lualine_x = {
-					function()
-						return os.date("%a %H:%M")
-					end,
+					function() return os.date("%H:%M") end,
 				},
 			},
 			inactive_winbar = {
@@ -91,9 +89,7 @@ return {
 					},
 				},
 				lualine_x = {
-					function()
-						return os.date("%a %H:%M")
-					end,
+					function() return os.date("%H:%M") end,
 				},
 			},
 			extensions = {},
