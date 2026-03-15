@@ -13,7 +13,8 @@ return {
 			require("mini.surround").setup()
 
 			require("mini.files").setup()
-			require("mini.jump").setup()
+			require("mini.git").setup()
+			require("mini.diff").setup({ view = { signs = { add = '+', change = '~', delete = '-' } } })
 
 			require("mini.trailspace").setup()
 		end,

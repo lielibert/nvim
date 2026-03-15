@@ -4,12 +4,13 @@ return {
 	priority = 10000,
 	lazy = false,
 	opts = {
-		win = { enabled= true, backdrop = 100},
+		win = { enabled = true, backdrop = 100 },
 		terminal = { enabled = true, win = { style = "float" } },
 		animate = { enabled = true },
 		bufdelete = { enabled = true },
 		zen = { enabled = true },
 		gitbrowse = { enabled = true },
+		lazygit = { enabled = true },
 		bigfile = { enabled = true },
 		dashboard = { enabled = true },
 		notify = { enabled = true },
@@ -322,6 +323,11 @@ return {
 			function() Snacks.gitbrowse() end,
 			desc = "Git Browse",
 			mode = { "n", "v" }
+		},
+		{
+			"<leader>gg",
+			function() Snacks.lazygit() end,
+			desc = "Lazygit"
 		},
 		{
 			"<leader>un",

@@ -34,11 +34,25 @@ return {
 						"CursorMoved",
 						"CursorMovedI",
 						"ModeChanged",
+						"RecordingEnter",
+						"RecordingLeave"
 					},
 				},
 			},
 			sections = {
-				lualine_a = {
+				lualine_a = { "mode" },
+				lualine_b = {
+					"branch",
+					"diff",
+					"diagnostics",
+				},
+				lualine_c = {
+					{
+						"filename",
+						path = 1, -- 2 for absolute path
+					},
+				},
+				lualine_x = {
 					{
 						function()
 							local reg = vim.fn.reg_recording()
@@ -49,16 +63,8 @@ return {
 							end
 						end,
 					},
-					"mode",
 				},
-				lualine_b = {
-					"branch",
-					"diff",
-					"diagnostics",
-				},
-				lualine_c = {},
-				lualine_x = { "encoding", "fileformat", "filetype" },
-				lualine_y = {},
+				lualine_y = { "encoding", "fileformat", "filetype" },
 				lualine_z = { "%l:%c / %L" },
 			},
 			inactive_sections = {
@@ -71,26 +77,12 @@ return {
 			},
 			tabline = {},
 			winbar = {
-				lualine_c = {
-					{
-						"filename",
-						path = 1, -- 2 for absolute path
-					},
-				},
-				lualine_x = {
-					function() return os.date("%H:%M") end,
-				},
+				lualine_c = {},
+				lualine_x = {},
 			},
 			inactive_winbar = {
-				lualine_c = {
-					{
-						"filename",
-						path = 1, -- 2 for absolute path
-					},
-				},
-				lualine_x = {
-					function() return os.date("%H:%M") end,
-				},
+				lualine_c = {},
+				lualine_x = {},
 			},
 			extensions = {},
 		})

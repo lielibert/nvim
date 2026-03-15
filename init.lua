@@ -1,6 +1,7 @@
 vim.g.mapleader = " " -- set leader key
 
 vim.loader.enable() -- speeds up require()
+vim.opt.cursorline = true -- it tells that the terminal is fast
 vim.opt.ttyfast = true -- it tells that the terminal is fast
 vim.opt.termguicolors = true -- true terminal colors
 vim.opt.relativenumber = true -- for relativenumber
@@ -44,10 +45,11 @@ require("lazy").setup({
 	require("plugins.ensure"),
 	require("plugins.blink"),
 	require("plugins.mini"),
-	require("plugins.git"),
+	-- require("plugins.git"),
 	require("plugins.multiplecursor"),
 	require("plugins.lualine"),
 	require("plugins.dial"),
+	require("plugins.nvim-colorizer"),
 	-- require("plugins.copilot"), -- load when you want to use copilot
 })
 
@@ -57,4 +59,4 @@ require("config.lsp-config")
 require("config.keymaps")
 require("config.commands")
 require("config.macros")
-vim.cmd.colorscheme("base16-tokyo-night-moon")
+vim.cmd.colorscheme("base16-catppuccin-mocha")
