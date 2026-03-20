@@ -7,19 +7,20 @@ autocmd({ "BufWritePost" }, {
 		require("lint").try_lint()
 	end,
 })
-autocmd("InsertEnter", {
-	callback = function()
-		vim.opt.number = true
-		vim.opt.relativenumber = false
-	end,
-})
 
-autocmd("InsertLeave", {
-	callback = function()
-		vim.opt.number = false
-		vim.opt.relativenumber = true
-	end,
-})
+-- autocmd("InsertEnter", {
+-- 	callback = function()
+-- 		vim.opt.number = true
+-- 		vim.opt.relativenumber = false
+-- 	end,
+-- })
+--
+-- autocmd("InsertLeave", {
+-- 	callback = function()
+-- 		vim.opt.number = false
+-- 		vim.opt.relativenumber = true
+-- 	end,
+-- })
 
 -- USER COMMAND
 cmd("RT",":lua MiniTrailspace.trim()<CR>", {})

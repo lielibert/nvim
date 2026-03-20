@@ -24,6 +24,7 @@ return {
 		input = { enabled = true },
 		quickfile = { enabled = true },
 		scroll = { enabled = true },
+		statusline = { enabled = true },
 		words = { enabled = true, treesitter = true },
 		rename = { enabled = true },
 		util = { enabled = true },

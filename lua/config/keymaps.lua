@@ -6,8 +6,6 @@ local key = vim.keymap.set
 key("i", "<C-d>", "x", { silent = true, desc = "delete forward" })
 key("i", "<C-f>", "a", { silent = true, desc = "next character" })
 key("i", "<C-b>", "i", { silent = true, desc = "previous character" })
-key("n", "<C-d>", "<C-d>zz", { silent = true, desc = "center, down" })
-key("n", "<C-u>", "<C-u>zz", { silent = true, desc = "center, up" })
 key("n", "gfm", vim.lsp.buf.format, { desc = "format whole file" })
 key("n", "<leader>w", ":w<CR>", { silent = true, desc = "write file" })
 key("n", "<leader>l", ":Lazy<CR>", { silent = true, desc = "write file" })

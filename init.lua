@@ -47,7 +47,7 @@ require("lazy").setup({
 	require("plugins.mini"),
 	-- require("plugins.git"),
 	require("plugins.multiplecursor"),
-	require("plugins.lualine"),
+	require("plugins.flash"),
 	require("plugins.dial"),
 	require("plugins.nvim-colorizer"),
 	-- require("plugins.copilot"), -- load when you want to use copilot
