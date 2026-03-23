@@ -15,6 +15,8 @@ vim.opt.signcolumn = "yes" -- always show sign column
 vim.opt.winborder = "rounded"
 vim.opt.swapfile = false -- disable swap-file
 vim.opt.undofile = true -- to save undo
+vim.opt.signcolumn = "auto" -- to auto adjust signcolumn
+
 -- vim.opt.clipboard = "unnamedplus" -- for clipboard
 
 -- Bootstrap lazy.nvim
@@ -50,6 +52,7 @@ require("lazy").setup({
 	require("plugins.flash"),
 	require("plugins.dial"),
 	require("plugins.nvim-colorizer"),
+	require("plugins.tabout"),
 	-- require("plugins.copilot"), -- load when you want to use copilot
 })
 

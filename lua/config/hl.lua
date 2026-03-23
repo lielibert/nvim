@@ -1,7 +1,6 @@
 local hl = vim.api.nvim_set_hl
 
 local apply_hl = function()
-
 	-- highlight group for blink
 	hl(0, "BlinkCmpMenu", { fg = "#ffffff", bg = "NONE" })
 	hl(0, "BlinkCmpMenuBorder", { fg = "#707070" })
@@ -14,15 +13,11 @@ local apply_hl = function()
 	hl(0, "BlinkCmpSource", { fg = "#ffffff", bg = "NONE" })
 	hl(0, "TSComment", { fg = "#888888", bg = "NONE", bold = true })
 
-	-- hl for multiplecursor
-	hl(0, "MultiCursorCursor", { reverse = true })
-	hl(0, "MultiCursorVisual", { link = "Visual" })
-	hl(0, "MultiCursorSign", { link = "SignColumn" })
-	hl(0, "MultiCursorMatchPreview", { link = "Search" })
-	hl(0, "MultiCursorDisabledCursor", { reverse = true })
-	hl(0, "MultiCursorDisabledVisual", { link = "Visual" })
-	hl(0, "MultiCursorDisabledSign", { link = "SignColumn" })
-	hl(0, "MiniTrailspace", { bg="#808080" })
+
+	hl(0, 'FlashMatch', { foreground = '#ffffff', background = '#00aa00' })
+	hl(0, 'FlashCurrent', { foreground = '#D0E8F2', background = '#456268' })
+	hl(0, 'FlashLabel', { foreground = '#EEF5FF', background = '#FF5772' })
+	hl(0, 'FlashCursor', { foreground = '#ffffff', background = '#000000' })
 end
 
 vim.api.nvim_create_autocmd("colorscheme", { callback = apply_hl, })

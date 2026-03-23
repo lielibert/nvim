@@ -3,9 +3,6 @@
 local key = vim.keymap.set
 -- local autocmd = vim.api.nvim_create_autocmd
 
-key("i", "<C-d>", "x", { silent = true, desc = "delete forward" })
-key("i", "<C-f>", "a", { silent = true, desc = "next character" })
-key("i", "<C-b>", "i", { silent = true, desc = "previous character" })
 key("n", "gfm", vim.lsp.buf.format, { desc = "format whole file" })
 key("n", "<leader>w", ":w<CR>", { silent = true, desc = "write file" })
 key("n", "<leader>l", ":Lazy<CR>", { silent = true, desc = "write file" })
@@ -23,3 +20,6 @@ key({ "n", "x", "v" }, "<leader>d", '"+d', { silent = true, desc = "cut to clipb
 key({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help, { silent = true, desc = "show signature" })
 key("n", "<leader>se", function() require("scissors").editSnippet() end, { desc = "Snippet: Edit" })
 key({ "n", "x" }, "<leader>sa", function() require("scissors").addNewSnippet() end, { desc = "Snippet: Add" })
+key({ "n", "x" }, "<leader>ca", function()
+	require("tiny-code-action").code_action()
+end, { noremap = true, silent = true })

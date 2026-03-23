@@ -1,5 +1,4 @@
 return {
-
 	{
 		"saghen/blink.cmp",
 		event = { "InsertEnter", "BufReadPost", "BufNewFile" },
@@ -11,12 +10,28 @@ return {
 			{
 				"L3MON4D3/LuaSnip",
 				build = "make install_jsregexp",
-				config = function()
-					require("luasnip.loaders.from_vscode").lazy_load()
-					require("luasnip.loaders.from_vscode").lazy_load({
-						paths = { "~/.config/nvim/snippets" }
-					})
-					vim.keymap.set({ "i", "s" }, "<C-e>", function()
+				keys = {
+					['<Tab>'] = function(fallback)
+						if luasnip.expand_or_jumpable() then
+							vim.fn.feedkeys(
+								vim.api.nvim_replace_termcodes(
+									'<Plug>luasnip-expand-or-jump',
+									true, true, false), '')
+						else
+							fallback()
+						end
+					end,
+					['<S-Tab>'] = function(fallback)
+						if luasnip.jumpable(-1) then
+							vim.fn.feedkeys(
+								vim.api.nvim_replace_termcodes('<Plug>luasnip-jump-prev',
+									true,
+									true, false), '')
+						else
+							fallback()
+						end
+					end,
+					["<C-e>"] = function()
 						local luasnip = require("luasnip")
 						if luasnip.in_snippet() then
 							luasnip.unlink_current()
@@ -27,7 +42,11 @@ return {
 								true
 							)
 						end
-					end)
+					end
+				},
+				config = function()
+					require("luasnip.loaders.from_vscode").lazy_load()
+					require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/.config/nvim/snippets" } })
 				end
 			},
 		},

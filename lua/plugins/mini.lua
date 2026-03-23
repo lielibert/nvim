@@ -1,7 +1,6 @@
 local function get_recording()
 	local reg = vim.fn.reg_recording()
 	if reg == "" then return "" end
-	-- Replace "Recording" with your preferred icon or text
 	return "Recording @" .. reg
 end
 
